@@ -1,0 +1,74 @@
+---
+layout: default
+title: {{ site.name }}
+---
+
+<div id="home">
+
+	<a name="intro"></a>
+  <h1>Why CORe50?</h1>
+
+<strong>Continuous/Lifelong learning</strong> of high-dimensional data streams is a challenging research problem. In fact, fully retraining models each time new data becomes available is infeasible, due to computational and storage issues, while naïve incremental strategies have been shown to suffer from catastrophic forgetting. In the context of real-world object recognition applications (e.g. robotics), where continuous learning is crucial, very few datasets and benchmarks are available to evaluate and compare emerging techniques.<br><br>
+
+ In this page we provide a new dataset and benchmark <strong>CORe50</strong>, specifically designed for <strong>C</strong>ontinuous <strong>O</strong>bject <strong>Re</strong>cognition, and introduce baseline approaches for different continuous learning scenarios.
+
+<br><br>
+If you plan to use this dataset or other resources you'll find in this page, <strong> please cite our latest paper</strong>: </p>
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><img src="imgs/pdf_download.png" width="50px" style="padding:5px; vertical-align: middle;"></div>
+<div> 
+<i> Maltoni Davide and Vincenzo Lomonaco. <a href="https://arxiv.org/abs/1511.03163">"Semi-supervised tuning from temporal coherence."</a> arXiv preprint arXiv:1511.03163 (2015). </i></div>
+</div>
+
+	<a name="dataset"></a>
+  <h1>Dataset</h1>
+<p>
+<strong>CORe50</strong>, specifically designed for (<strong>C</strong>)ontinuous (<strong>O</strong>)bject (<strong>Re</strong>)cognition, is a collection of 50 domestic objects belonging to 10 categories: plug adapters, mobile phones, scissors, light bulbs, cans, glasses, balls, markers, cups and remote controls. Classification can be performed at object level (50 classes) or at category level (10 classes). The first task (the default one) is much more challenging because objects of the same category are very difficult to be distinguished under certain poses.  <br><br>
+The dataset has been collected in <strong>11 distinct sessions</strong> (8 indoor and 3 outdoor) characterized by different backgrounds and lighting. For each session and for each object, a 15 seconds video (at 20 fps) has been recorded with a Kinect 2.0 sensor delivering 300 RGB-D frames. <br><br>
+Objects are hand hold by the operator and the camera <i>point-of-view</i> is that of the operator eyes. The operator is required to extend his arm and smoothly move/rotate the object in front of the camera. A subjective point-of-view with objects at grab-distance is well-suited for a number of robotic applications. The grabbing hand (left or right) changes throughout the sessions and relevant object occlusions are often produced by the hand itself.<br><br>
+</p>
+<div style="text-align: center">
+<img src="/imgs/classes.gif" alt="core50 dataset examples" style="width:80%; margin-top:10px;">
+<p><strong>Fig.1</strong> <i>Example images of the 50 objects in CORe50. Each column denotes one of the 10 categories.</i> </p>
+</div><br>
+<p>
+
+In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in CORe50 where each column denotes one of the 10 categories and each row a different object. The full dataset consists of 164,866 128×128 RGB-D images: 11 sessions × 50 objects × (around 300) frames per session. Three of the eleven sessions (#3, #7 and #10) have been selected for test and the remaining 8 sessions are used for training. We tried to balance as much as possible the difficulty of training and test session with respect to: indoor/outdoor, holding hand (left or right) and complexity of the background. For more information about the dataset take a look a the section "<strong>CORe50</strong>" in the <a href="">paper</a>.
+</p>
+	<a name="benchmark"></a>
+  <h1>Benchmark</h1>
+			Popular datasets such as <i>ImageNet</i> and <i>Pascal VOC</i>, provide a very good playground for classification and detection approaches. However, they have been designed with “static” evaluation protocols in mind; the entire dataset is split in just two parts: a training set is used for (one-shot) learning and a separate test set is used for accuracy evaluation. 
+
+<br><br><strong>Splitting the training set into a number of batches is essential</strong> to train and test continuous learning approaches, a hot research topic that is currently receiving much attention. Unfortunately, most of the existing datasets are not well suited to this purpose because they lack a fundamental ingredient: the presence of multiple (unconstrained) views of the same objects taken in different sessions (varying background, lighting, pose, occlusions, etc.). 
+			Focusing on Object Recognition we consider three continuous learning scenarios:<br><br>
+<ul class="posts">
+			<li><span><strong>New Instances (NI)</strong>: new training patterns of the same classes becomes available in subsequent batches with new poses and environment conditions (illuminations, background, occlusions, etc..). A good model is expected to incrementally consolidate its knowledge about the known classes without compromising what it learned before.</li><br>
+			<li><span><strong>New Classes (NC)</strong>: new training patterns belonging to different classes becomes available in subsequent batches. In this case the model should be able to deal with the new classes without losing accuracy on the previous ones. </li><br>
+			<li><span><strong>New Instances and Classes (NIC)</strong>: new training patterns belonging both to known and new classes becomes available in subsequent training batches. A good model is expected to consolidate its knowledge about the known classes and to learn the new ones.</li><br>
+</ul>
+
+As argued by many researchers, naïve approaches cannot avoid catastrophic forgetting in complex real-world scenarios such as <strong>NC</strong> and <strong>NIC</strong>. In our work we have designed <strong>simple baselines</strong> which can perform markedly better but still leaves much room for improvements. Check it out the results on our <a href="">paper</a> or download them as csv or python dicts in the section below!
+
+	<a name="download"></a>
+  <h1>Download</h1>
+	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the material which could be useful for speeding-up the creation of new continuous learning strategies. <br><br>
+  <ul class="posts">
+     <li><span><a href=""></a> Dataset - <span style="color:#ff0000"> will be available soon!!!</span></li>
+<li><span><a href=""></a> Conf. Files - <span style="color:#ff0000"> will be available soon!!!</span></li>
+<li><span><a href=""></a> Code - <span style="color:#ff0000"> will be available soon!!!</span></li>
+<li><span><a href=""></a> Results- <span style="color:#ff0000"> will be available soon!!!</span></li>
+  </ul>
+
+	<a name="contacts"></a>
+  <h1>Contacts</h1>
+	This Dataset and Benchmark has been developed at the University of Bologna with the effort of different people:<br><br>
+  <ul class="posts">
+     <li><span><a href="http://vincenzolomonaco.com"> Vincenzo Lomonaco</a></li>
+ 		<li><span><a href="http://bias.csr.unibo.it/maltoni/main.htm"> Davide Maltoni</a></li>
+ 		<li><span><a href=""></a> Riccardo Monica</li>
+  </ul>
+
+	<br>For further inquiries you are free to contact Vincenzo Lomonaco through his email: <i>vincenzo.lomonaco AT unibo.it</i>
+	
+
+</div>

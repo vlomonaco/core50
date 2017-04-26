@@ -11,13 +11,11 @@ title: {{ site.name }}
 <strong>Continuous/Lifelong learning</strong> of high-dimensional data streams is a challenging research problem. In fact, fully retraining models each time new data becomes available is infeasible, due to computational and storage issues, while naïve incremental strategies have been shown to suffer from catastrophic forgetting. In the context of real-world object recognition applications (e.g. robotics), where continuous learning is crucial, very few datasets and benchmarks are available to evaluate and compare emerging techniques.<br><br>
 
  In this page we provide a new dataset and benchmark <strong>CORe50</strong>, specifically designed for <strong>C</strong>ontinuous <strong>O</strong>bject <strong>Re</strong>cognition, and introduce baseline approaches for different continuous learning scenarios.
-
-<br><br>
 If you plan to use this dataset or other resources you'll find in this page, <strong> please cite our latest paper</strong>: </p>
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
-<div style="width:60px; height: 60px;float:left; padding-right:10px"><img src="imgs/pdf_download.png" width="50px" style="padding:5px; vertical-align: middle;"></div>
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/pdf_download.png" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div> 
-<i> Maltoni Davide and Vincenzo Lomonaco. <a href="https://arxiv.org/abs/1511.03163">"Semi-supervised tuning from temporal coherence."</a> arXiv preprint arXiv:1511.03163 (2015). </i></div>
+<i> Maltoni Davide and Vincenzo Lomonaco. <a href="">"CORe50: a new Dataset and Benchmark for Continuous Object Recognition".</a> arXiv preprint arXiv:1511.03163 (2017). </i></div>
 </div>
 
 	<a name="dataset"></a>
@@ -47,17 +45,139 @@ In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in 
 			<li><span><strong>New Instances and Classes (NIC)</strong>: new training patterns belonging both to known and new classes becomes available in subsequent training batches. A good model is expected to consolidate its knowledge about the known classes and to learn the new ones.</li><br>
 </ul>
 
-As argued by many researchers, naïve approaches cannot avoid catastrophic forgetting in complex real-world scenarios such as <strong>NC</strong> and <strong>NIC</strong>. In our work we have designed <strong>simple baselines</strong> which can perform markedly better but still leaves much room for improvements. Check it out the results on our <a href="">paper</a> or download them as csv or python dicts in the section below!
+<div style="text-align: center">
+<img src="imgs/NI_caffenet.svg" alt="core50 dataset examples" style="width:49%; margin-top:10px;">
+<img src="imgs/NC_caffenet.svg" alt="core50 dataset examples" style="width:49%; margin-top:10px;">
+<img src="imgs/NIC_caffenet.svg" alt="core50 dataset examples" style="width:50%; margin-top:10px;">
+<p><strong>Fig. 2</strong> <i>Mid-Caffe accuracy in the NI, NC and NIC scenarios (average over 10 runs).</i> </p>
+</div><br>
+
+As argued by many researchers, naïve approaches cannot avoid catastrophic forgetting in complex real-world scenarios such as <strong>NC</strong> and <strong>NIC</strong>. In our work we have designed <strong>simple baselines</strong> which can perform markedly better but still leaves much room for improvements  (see <strong> Fig. 2</strong>). Check it out the full results on our <a href="">paper</a> or download them as csv or python dicts in the section below!
 
 	<a name="download"></a>
   <h1>Download</h1>
-	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the material which could be useful for speeding-up the creation of new continuous learning strategies. <br><br>
-  <ul class="posts">
-     <li><span><a href=""></a> Dataset - <span style="color:#ff0000"> will be available soon!!!</span></li>
-<li><span><a href=""></a> Conf. Files - <span style="color:#ff0000"> will be available soon!!!</span></li>
-<li><span><a href=""></a> Code - <span style="color:#ff0000"> will be available soon!!!</span></li>
-<li><span><a href=""></a> Results- <span style="color:#ff0000"> will be available soon!!!</span></li>
-  </ul>
+	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the material which could be useful for speeding-up the creation of new continuous learning strategies. <br>
+
+<h3> Dataset </h3>
+<p>The dataset directory tree is not that different from what you may expect. For each session we have a new directory for each object, and in each of these directories a unique filename with the format <i>"C_[session_num]_[obj_num]_[frame_seq_id].png"</i> :</p>
+<pre><code>CORe50/
+  |
+  |--- s1/
+  |    |------ o1/
+  |    |       |---- C_01_01_XXX.png
+  |    |       |---- ...
+  |    | 
+  |    |------ o2/
+  |    |------ ...
+  |    |------ o50/
+  |
+  |--- s2/
+  |--- s3/
+  |--- ...
+  |--- s11/
+</code></pre>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;"> 
+<strong>Full-size_350x350_images.zip</strong>. <i> <span style="color:#ff0000"> will be available soon!!!</span></i></div>
+</div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;"> 
+<strong>Cropped_128x128_images.zip</strong>. <i> <span style="color:#ff0000"> will be available soon!!!</span></i></div>
+</div>
+
+<h3> Configuration Files </h3>
+<p>Don't you wanna delve into our code? Do you wanna use a different DL framework or programming language but still being able to compare your results with our benchmark? Easy! Just <strong>download the file lists of each experiment</strong> in plain txt format!
+The directory tree should be like this:</p>
+<pre><code>filelists/
+  |
+  |--- NI_inc/
+  |       |------Run0/
+  |       |------Run1/
+  |       |------...
+  |       |------Run9/
+  |
+  |--- NI_cum/
+  |--- NC_inc/
+  |--- NC_cum/
+  |--- NIC_inc/
+  |--- NIC_cum/
+</code></pre>
+
+So, for each strategy and for each run, a number of <i>"train_batch_XX_filelist.txt"</i> is available along with the <i>"test_filelist.txt"</i>. Each file is formatted in the <a href="https://ceciliavision.wordpress.com/2016/03/08/caffedata-layer/">caffe filelist format</a>. <br><br>Please note that: <strong>(i)</strong> the order <strong> may highly impact</strong> the accuracy in a continuous learning scenario! This is why a multiple runs configuration is needed; <strong>(ii)</strong> the labels are coherent only for each run among the train-test filelists and do not stay necessary the same among the scenarios due to technical implementation details!
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/batches_filelists.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;"> 
+<strong>batches_filelists.zip</strong>. <i>Plain text filelists for each experiment and run</i>.</div>
+</div>
+
+<h3> Results </h3>
+If you want to compare your strategy with our benchmark or just take a closer look at the tabular results, we are making available the <strong>tab separated values (.tsv)</strong> files for each scenario! Which you can easily import in excel or parse with your favourite programming language. The format of the text files is the following:
+<pre style="margin-top:15px"><code>###################################
+# scenario: NI
+# net: mid-caffenet
+# strategy: naive
+###################################
+RunID	Batch0	Batch1	Batch2	Batch3	Batch4	Batch5	Batch6	Batch7
+0	44,30%	35,50%	55,26%	55,86%	54,39%	48,90%	47,77%	60,71%
+1	47,56%	48,94%	51,83%	53,64%	51,26%	43,39%	58,98%	55,61%
+2	40,06%	53,04%	46,65%	45,19%	44,09%	50,92%	54,42%	57,01%
+3	46,29%	48,66%	54,64%	52,48%	44,36%	51,55%	50,64%	44,26%
+4	28,40%	43,77%	43,27%	51,00%	58,26%	56,89%	52,08%	61,94%
+5	34,65%	34,36%	50,14%	56,89%	59,67%	56,66%	56,16%	52,66%
+6	40,80%	51,92%	51,44%	53,12%	58,19%	49,72%	50,33%	48,14%
+7	30,96%	51,54%	46,28%	51,69%	56,88%	55,44%	55,72%	49,98%
+8	34,32%	32,19%	40,55%	52,06%	57,86%	57,41%	57,80%	61,86%
+9	46,06%	47,62%	51,80%	46,92%	42,30%	57,70%	59,98%	50,01%
+avg	38,59%	44,44%	48,90%	52,44%	53,88%	52,32%	53,77%	54,69%
+dev.std	6,87%	7,88%	4,84%	3,59%	6,75%	4,74%	4,06%	6,18%
+....
+</code></pre>
+
+For convenience, we have split the tsv in three files with respect of the three different scenarios but with this format you can easily concatenate them in a single file if you need it.
+
+For an even simpler analysis we have already prepared for you a <strong>Python pickled OrderedDict</strong> you can simply load and use to access/plot the results:
+			<div class="highlight highlight-Python" style="margin-top:15px">
+			<pre><span class="pl-c"> # loading the picked file</span><br> >>><span class="pl-k"> import</span> pickle <span class="pl-k">as</span> pkl <br> >>> pkl_file <span class="pl-k">= open</span>(<span class="pl-s">'results.pkl'</span>, <span class="pl-s">'rb'</span>) <br> >>> exps <span class="pl-k">=</span> pkl.load(pkl_file)<br><br><span class="pl-c"> # using the dict like exps[scenario][net][strategy][run][batch]</span><br> >>><span class="pl-k"> print </span>exps[<span class="pl-s">'NI'</span>][<span class="pl-s">'mid-caffenet'</span>][<span class="pl-s">'naive'</span>][<span class="pl-s">'avg'</span>].values() <br> [38.59, 44.44, 48.90, 52.44, 53.88, 52.32, 53.77, 54.69]<br> >>><span class="pl-k"> print </span>exps[<span class="pl-s">'NI'</span>][<span class="pl-s">'mid-caffenet'</span>][<span class="pl-s">'naive'</span>][<span class="pl-s">'avg'</span>][<span class="pl-s">'Batch0'</span>] <br> 38.59</pre>
+			</div>
+
+A similar approach can be used with the <i>sequential experiments</i> of <strong>Fig. 5</strong> in the paper. You can find more code examples about extracting results data in the <a href="https://github.com/vlomonaco/core50">README.txt</a> of the <a href="https://github.com/vlomonaco/core50">Github repo</a>. Otherwise you can directy download the tsvs and the python dicts here:
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/results_tsv.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;"> 
+<strong>tsv_results.zip</strong>. <i> Tab-separated-values results for each scenario</i>.</div>
+</div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/results.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;"> 
+<strong>results.pkl</strong>. <i>Pre-loaded Python dict (pikled)</i>.</div>
+</div>
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/seq.tsv"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;"> 
+<strong>seq.tsv</strong>. <i> Tab-separated-values results for the sequential experiments</i>.</div>
+</div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/seq_results.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;"> 
+<strong>seq_results.pkl</strong>. <i>Pre-loaded Python dict (pikled) for the sequential experiments</i>.</div>
+</div>
+<h3> Code </h3>
+The code will be made available shortly in the <a href="https://github.com/vlomonaco/core50">github repository</a>! Stay tuned!
+If you want to contribute or you find a bug, please <strong>make a PR</strong> or simply <strong>open an issue</strong> (also questions are welcomed)! We guarantee at least an answer in 48hrs! :-)
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="https://github.com/vlomonaco/core50/archive/master.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;"> 
+<strong>core50-master.zip</strong>. <i> - <span style="color:#ff0000"> will be available soon!!!</span></i></div>
+</div>
 
 	<a name="contacts"></a>
   <h1>Contacts</h1>
@@ -68,7 +188,7 @@ As argued by many researchers, naïve approaches cannot avoid catastrophic forge
  		<li><span><a href=""></a> Riccardo Monica</li>
   </ul>
 
-	<br>For further inquiries you are free to contact Vincenzo Lomonaco through his email: <i>vincenzo.lomonaco AT unibo.it</i>
+	<br>For further inquiries you are free to contact <strong>Vincenzo Lomonaco</strong> through his email: <i>vincenzo.lomonaco@unibo.it</i>
 	
 
 </div>

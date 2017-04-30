@@ -7,7 +7,7 @@ benchmark. If you plan to use this dataset or other resources you'll find in thi
 
 >  Vincenzo Lomonaco and Davide Maltoni. **"CORe50: a new Dataset and Benchmark for Continuous Object Recognition"**. arXiv preprint arXiv:1511.03163 (2017). 
 
-You can find more information about the dataset at: 
+You can find more information about the dataset and benchmark at: 
 [vlomonaco.github.io/core50](http://vlomonaco.github.io/core50).
 
 
@@ -20,4 +20,4 @@ materials and reproduce the baselines.
 
 ## Author
 
-* [Vincenzo Lomonaco](http://vincenzolomonaco.com) - *vincenzo.lomonaco@unibo.it*
+* [Vincenzo Lomonaco](http://vincenzolomonaco.com) - email: *vincenzo.lomonaco@unibo.it*

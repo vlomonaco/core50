@@ -16,7 +16,8 @@ You can find more information about the dataset and benchmark at:
 Up to now, the code used to run the experiments is all here. Still, we plan to
 add in the near future the sacred configuration files and a single script which
 can install missing dependencies, download all the (external) necessary 
-materials and reproduce the baselines. 
+materials, set the local paths for you in order to easily reproduce the baselines
+you'll find in the paper. 
 
 ## Author
 

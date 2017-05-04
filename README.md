@@ -6,9 +6,9 @@
 [![built with Caffe](https://img.shields.io/badge/build%20with-sacred-yellow.svg)](https://github.com/IDSIA/sacred)
 
 ## A new Dataset and Benchmark for Continuous Object Recognition
-<img src="http://imgur.com/a/Cnvq2" width="50" align="right">
+<img src="http://imgur.com/2UyfKHs" width="1500" align="right">
 
-##### WARNING: This repository is still under construction!
+#### *WARNING: This repository is still under construction!*
 
 In this page we provide the code and all the materials related to the CORe50 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please cite our latest paper: 

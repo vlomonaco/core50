@@ -1,6 +1,6 @@
-# Core50 
+<img src="http://i.imgur.com/2UyfKHs.png?1" width="100" align="left">
 
-<img src="http://i.imgur.com/2UyfKHs.png?1" width="100" align="right">
+# Core50 
 
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/vlomonaco/core50/blob/master/LICENSE)
 [![built with Python2.7](https://img.shields.io/badge/build%20with-python2.7-red.svg)](https://www.python.org/)

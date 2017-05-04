@@ -1,4 +1,5 @@
-# Core50
+# Core50 
+<img src="http://i.imgur.com/2UyfKHs.png?1" width="50" align="right">
 
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/vlomonaco/core50/blob/master/LICENSE)
 [![built with Python2.7](https://img.shields.io/badge/build%20with-python2.7-red.svg)](https://www.python.org/)
@@ -6,7 +7,6 @@
 [![built with Caffe](https://img.shields.io/badge/build%20with-sacred-yellow.svg)](https://github.com/IDSIA/sacred)
 
 ## A new Dataset and Benchmark for Continuous Object Recognition
-<img src="http://i.imgur.com/2UyfKHs.png?1" width="150" align="right">
 
 #### *WARNING: This repository is still under construction!*
 

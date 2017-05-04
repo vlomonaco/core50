@@ -6,7 +6,7 @@
 [![built with Caffe](https://img.shields.io/badge/build%20with-sacred-yellow.svg)](https://github.com/IDSIA/sacred)
 
 ## A new Dataset and Benchmark for Continuous Object Recognition
-<img src="http://imgur.com/2UyfKHs" width="1500" align="right">
+<img src="http://i.imgur.com/2UyfKHs.png" width="150" align="right">
 
 #### *WARNING: This repository is still under construction!*
 

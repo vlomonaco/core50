@@ -1,4 +1,4 @@
-<img src="http://i.imgur.com/2UyfKHs.png?1" width="50" align="right">
+<img src="http://i.imgur.com/2UyfKHs.png?1" width="50" align="left" margin-right="-10px">
 
 # Core50 
 

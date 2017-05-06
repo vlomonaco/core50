@@ -28,6 +28,17 @@ can install missing dependencies, download all the (external) necessary
 materials, set the local paths for you in order to easily reproduce the baselines
 you'll find in the paper. 
 
+## Dependencies
+
+In order to extecute the code in the repository you'll need to install the following dependencies:
+
+* [Python2.7](https://www.python.org/)
+* [Caffe](http://caffe.berkeleyvision.org/)
+* [Sacred](https://github.com/IDSIA/sacred)
+
+You can find a step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
+Sacred is not really necessary (and you can easily remove from the source code if you want to). Still it is very nice for managing a lot of experiments configurations and [it's very simple to install](https://github.com/IDSIA/sacred#installing).
+
 ## Author
 
 * [Vincenzo Lomonaco](http://vincenzolomonaco.com) - email: *vincenzo.lomonaco@unibo.it*

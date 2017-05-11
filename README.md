@@ -2,7 +2,7 @@
 
 # Core50 
 
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/vlomonaco/core50/blob/master/LICENSE)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 [![built with Python2.7](https://img.shields.io/badge/build%20with-python2.7-red.svg)](https://www.python.org/)
 [![built with Caffe](https://img.shields.io/badge/build%20with-caffe-brightgreen.svg)](http://caffe.berkeleyvision.org/)
 [![built with Caffe](https://img.shields.io/badge/build%20with-sacred-yellow.svg)](https://github.com/IDSIA/sacred)
@@ -38,6 +38,10 @@ In order to extecute the code in the repository you'll need to install the follo
 
 You can find a step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
 Sacred is not really necessary (and you can easily remove from the source code if you want to). Still, it is very nice for managing a lot of experiments configurations and [it's very simple to install](https://github.com/IDSIA/sacred#installing).
+
+## License
+
+This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. 
 
 ## Author
 

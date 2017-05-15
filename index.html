@@ -30,8 +30,9 @@ Objects are hand hold by the operator and the camera <i>point-of-view</i> is tha
 <p><strong>Fig.1</strong> <i>Example images of the 50 objects in CORe50. Each column denotes one of the 10 categories.</i> </p>
 </div><br>
 <p>
+The presence of <strong>temporal coherent</strong> sessions (i.e., videos where the objects gently move in front of the camera) is another key feature since temporal smoothness can be used to simplify object detection, improve classification accuracy and to address <strong>semi-supervised</strong> (or <strong>unsupervised</strong>) scenarios.<br><br>
 
-In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in CORe50 where each column denotes one of the 10 categories and each row a different object. The full dataset consists of 164,866 128×128 RGB-D images: 11 sessions × 50 objects × (around 300) frames per session. Three of the eleven sessions (#3, #7 and #10) have been selected for test and the remaining 8 sessions are used for training. We tried to balance as much as possible the difficulty of training and test session with respect to: indoor/outdoor, holding hand (left or right) and complexity of the background. For more information about the dataset take a look a the section "<strong>CORe50</strong>" in the <a href="">paper</a>.
+In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in CORe50 where each column denotes one of the 10 categories and each row a different object. The full dataset consists of 164,866 128×128 RGB-D images: 11 sessions × 50 objects × (around 300) frames per session. Three of the eleven sessions (#3, #7 and #10) have been selected for test and the remaining 8 sessions are used for training. We tried to balance as much as possible the difficulty of training and test session with respect to: indoor/outdoor, holding hand (left or right) and complexity of the background. For more information about the dataset take a look a the section "<strong>CORe50</strong>" in the <a href="https://128.84.21.199/pdf/1705.03550">paper</a>.
 </p>
 	<a name="benchmark"></a>
   <h1>Benchmark</h1>
@@ -52,14 +53,26 @@ In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in 
 <p><strong>Fig. 2</strong> <i>Mid-CaffeNet accuracy in the NI, NC and NIC scenarios (average over 10 runs).</i> </p>
 </div><br>
 
-As argued by many researchers, naïve approaches cannot avoid catastrophic forgetting in complex real-world scenarios such as <strong>NC</strong> and <strong>NIC</strong>. In our work we have designed <strong>simple baselines</strong> which can perform markedly better than naïve strategies but still leave much room for improvements (see <strong> Fig. 2</strong>). Check it out the full results on our <a href="">paper</a> or download them as tsv or python dicts in the section below!
+As argued by many researchers, naïve approaches cannot avoid catastrophic forgetting in complex real-world scenarios such as <strong>NC</strong> and <strong>NIC</strong>. In our work we have designed <strong>simple baselines</strong> which can perform markedly better than naïve strategies but still leave much room for improvements (see <strong> Fig. 2</strong>). Check it out the full results on our <a href="https://128.84.21.199/pdf/1705.03550">paper</a> or download them as tsv or python dicts in the section below!
 
 	<a name="download"></a>
   <h1>Download</h1>
 	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the materials which could be useful for speeding-up the creation of new continuous learning strategies on CORe50. <br>
 
 <h3> Dataset </h3>
-<p>The dataset directory tree is not that different from what you may expect. For each session (s1, s2, ..., s11) we have 50 directories (o1, o2, ..., o50) representing the 50 objects contained in the dataset. In each of these directories, the temporal coherent frames are characterized by an unique filename with the format <i>"C_[session_num]_[obj_num]_[frame_seq_id].png"</i> :</p>
+<p>The dataset directory tree is not that different from what you may expect. For each session (<i>s1, s2, ..., s11</i>) we have 50 directories (<i>o1, o2, ..., o50</i>) representing the 50 objects contained in the dataset. Below you can see to which class each object instance id corresponds to:
+<pre><code>o1, ..., o5 -> plug adapters
+o6, ..., o10 -> mobile phones
+o11, ..., o15 -> scissors
+o16, ..., o20 -> light bulbs
+o21, ..., o25 -> cans
+o26, ..., o30 -> glasses
+o31, ..., o35 -> balls
+o36, ..., o40 -> markers
+o41, ..., o45 -> cups
+o46, ..., o50 -> remote controls
+</code></pre>
+In each object directories, the temporal coherent frames are characterized by an unique filename with the format <i>"C_[session_num]_[obj_num]_[frame_seq_id].png"</i> :</p>
 <pre><code>CORe50/
   |
   |--- s1/

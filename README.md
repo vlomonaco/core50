@@ -5,7 +5,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 [![built with Python2.7](https://img.shields.io/badge/build%20with-python2.7-red.svg)](https://www.python.org/)
 [![built with Caffe](https://img.shields.io/badge/build%20with-caffe-brightgreen.svg)](http://caffe.berkeleyvision.org/)
-[![built with Caffe](https://img.shields.io/badge/build%20with-sacred-yellow.svg)](https://github.com/IDSIA/sacred)
+[![built with Sacred](https://img.shields.io/badge/build%20with-sacred-yellow.svg)](https://github.com/IDSIA/sacred)
 
 ## A new Dataset and Benchmark for Continuous Object Recognition
 
@@ -14,7 +14,7 @@
 In this page we provide the code and all the materials related to the CORe50 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please cite our latest paper: 
 
->  Vincenzo Lomonaco and Davide Maltoni. **"CORe50: a new Dataset and Benchmark for Continuous Object Recognition"**. arXiv preprint arXiv:1511.03163 (2017). 
+>  Vincenzo Lomonaco and Davide Maltoni. **["CORe50: a new Dataset and Benchmark for Continuous Object Recognition"](https://arxiv.org/abs/1705.03550)**. arXiv preprint arXiv:1511.03163 (2017). 
 
 You can find more information about the dataset and benchmark at: 
 [vlomonaco.github.io/core50](http://vlomonaco.github.io/core50).

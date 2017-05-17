@@ -11,6 +11,11 @@
 
 #### *WARNING: This repository is still under construction!*
 
+- [x] All the code uploaded
+- [x] All the configs uploaded
+- [ ] Other help scripts
+- [ ] Easy-to-run demos
+
 In this page we provide the code and all the materials related to the CORe50 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please cite our latest paper: 
 
@@ -31,14 +36,6 @@ In order to extecute the code in the repository you'll need to install the follo
 You can find a step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
 Sacred is not really necessary (and you can easily remove from the source code if you want to). Still, it is very nice for managing a lot of experiments configurations and [it's very simple to install](https://github.com/IDSIA/sacred#installing). Numpy can be installed via your distribution package manager or [pip](https://pypi.python.org/pypi/pip).
 
-## License
-
-This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. 
-
-## Author
-
-* [Vincenzo Lomonaco](http://vincenzolomonaco.com) - email: *vincenzo.lomonaco@unibo.it*
-
 ## Getting Started
 
 Up to now, the code used to run the experiments is all here. Still, we plan to
@@ -48,55 +45,19 @@ materials, set the local paths for you in order to easily reproduce the baseline
 you'll find in the paper. 
 
 ### Project Structure
-```CORe50/
+Up to now the projects is structured as follows:
+```
+CORe50/
 ├── confs
 │   ├── sI
-│   │   ├── mid-caffeNet
-│   │   │   ├── cumulative.json
-│   │   │   ├── inc_solver.prototxt
-│   │   │   ├── inc_train_val.prototxt
-│   │   │   └── naive.json
-│   │   └── mid-vgg-cnn-m
-│   │       ├── cumulative.json
-│   │       ├── inc_solver.prototxt
-│   │       ├── inc_train_val.prototxt
-│   │       └── naive.json
+│   │   └── ...
+│   │   
 │   ├── sII
-│   │   ├── mid-caffeNet
-│   │   │   ├── copyweights.json
-│   │   │   ├── copyweights_with_reinit.json
-│   │   │   ├── cumulative.json
-│   │   │   ├── freezeweights.json
-│   │   │   ├── inc_conv5fc8.prototxt
-│   │   │   ├── inc_conv5_multifc8.prototxt
-│   │   │   ├── inc_solver.prototxt
-│   │   │   ├── inc_train_val.prototxt
-│   │   │   └── naive.json
-│   │   └── mid-vgg
-│   │       ├── copyweights.json
-│   │       ├── copyweights_with_reinit.json
-│   │       ├── cumulative.json
-│   │       ├── freezeweights.json
-│   │       ├── inc_conv5fc8.prototxt
-│   │       ├── inc_solver.prototxt
-│   │       ├── inc_train_val.prototxt
-│   │       └── naive.json
-│   └── sIII
-│       ├── mid-caffeNet
-│       │   ├── copyweights_with_reinit.json
-│       │   ├── cumulative.json
-│       │   ├── inc_conv5fc8.prototxt
-│       │   ├── inc_conv5_multifc8.prototxt
-│       │   ├── inc_solver.prototxt
-│       │   ├── inc_train_val.prototxt
-│       │   └── naive.json
-│       └── mid-vgg
-│           ├── copyweights_with_reinit.json
-│           ├── cumulative.json
-│           ├── inc_conv5fc8.prototxt
-│           ├── inc_solver.prototxt
-│           ├── inc_train_val.prototxt
-│           └── naive.json
+│   │   └── ...
+│   │   
+│   └── sIII 
+│       └── ...
+│
 ├── core
 │   ├── convert_lmdb.py
 │   ├── core50_inc_finetuning.py
@@ -105,6 +66,7 @@ you'll find in the paper.
 │   ├── create_sII_filelist.py
 │   ├── create_sIII_filelist.py
 │   └── inc_finetuning.py
+│
 ├── data
 │   ├── batches_filelists.zip
 │   ├── NC.tsv
@@ -114,6 +76,7 @@ you'll find in the paper.
 │   ├── results_tsv.zip
 │   ├── seq_results.pkl
 │   └── seq.tsv
+│
 ├── LICENSE
 ├── README.md
 ├── run_sI_exps.sh
@@ -122,3 +85,13 @@ you'll find in the paper.
 └── scripts
 ```
 
+In the *confs* folder you can find all the experiments configurations and the caffe
+definition files. In *core* the actual code of the benchmark, in *data* results and configuration data you can use without delving in the code. *Scripts* (currently void) will contain useful script to help you downloading necessary extra materials. Bash scripts will be adjusted for running the benchmark without much pain. 
+
+## License
+
+This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. 
+
+## Author
+
+* [Vincenzo Lomonaco](http://vincenzolomonaco.com) - email: *vincenzo.lomonaco@unibo.it*

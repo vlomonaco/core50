@@ -11,10 +11,11 @@
 
 #### *WARNING: This repository is still under construction!*
 
-- [x] All the code uploaded
-- [x] All the configs uploaded
-- [ ] Other help scripts
-- [ ] Easy-to-run demos
+- [x] CORe50 core code-base
+- [x] CORe50 benchmark configuration files
+- [x] Easy-access results data and baches configurations
+- [ ] Getting started scripts
+- [ ] Easy-setup and demos
 
 In this page we provide the code and all the materials related to the CORe50 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please cite our latest paper: 
@@ -85,8 +86,9 @@ CORe50/
 └── scripts
 ```
 
-In the *confs* folder you can find all the experiments configurations and the caffe
-definition files. In *core* the actual code of the benchmark, in *data* results and configuration data you can use without delving in the code. *Scripts* (currently void) will contain useful script to help you downloading necessary extra materials. Bash scripts will be adjusted for running the benchmark without much pain. 
+In the **confs** folder you can find all the experiments configurations and the caffe
+definition files. In **core** the actual code of the benchmark; in **data** results and configuration files you can download without delving into the code. 
+Finally, **scripts** (currently void) will contain useful scripts to help you downloading the necessary extra materials. Bash scripts will be updated soon for running the benchmark without much pain. 
 
 ## License
 

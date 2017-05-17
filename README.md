@@ -33,11 +33,12 @@ you'll find in the paper.
 In order to extecute the code in the repository you'll need to install the following dependencies:
 
 * [Python 2.7](https://www.python.org/)
+* [Numpy](https://pypi.python.org/pypi/numpy/1.6.1)
 * [Caffe](http://caffe.berkeleyvision.org/)
 * [Sacred](https://github.com/IDSIA/sacred)
 
 You can find a step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
-Sacred is not really necessary (and you can easily remove from the source code if you want to). Still, it is very nice for managing a lot of experiments configurations and [it's very simple to install](https://github.com/IDSIA/sacred#installing).
+Sacred is not really necessary (and you can easily remove from the source code if you want to). Still, it is very nice for managing a lot of experiments configurations and [it's very simple to install](https://github.com/IDSIA/sacred#installing). Numpy can be installed via your distribution package manager or [pip](https://pypi.python.org/pypi/pip).
 
 ## License
 

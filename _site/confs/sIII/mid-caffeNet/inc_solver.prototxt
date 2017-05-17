@@ -1,0 +1,20 @@
+random_seed: 0
+net: "/home/vincenzo/serverexp/caffe_exp/ior50/incremental/sIII/mid-caffeNet/inc_conv5fc8.prototxt"
+test_iter: 0
+test_interval: 200
+
+# lr for fine-tuning should be lower than when starting from scratch
+base_lr: 0.0001
+lr_policy: "step"
+gamma: 0.1
+
+# stepsize should also be lower, as we're closer to being done
+stepsize: 300
+display: 20
+max_iter: 300
+momentum: 0.9
+weight_decay: 0.0005
+
+snapshot: 300
+snapshot_prefix: "/home/admin/data/ior50/ior50n/caffe/snapshots/train_batch_78"
+snapshot_format: HDF5

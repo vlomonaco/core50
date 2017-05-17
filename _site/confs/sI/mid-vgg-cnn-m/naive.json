@@ -1,0 +1,23 @@
+{
+  "name":"ior50 incremental finetuning - sI",
+  "img_dim": 128,
+  "data_path": "/home/admin/Ior50N/128/",
+  "lmdb_bp": "/home/admin/data/ior50/ior50n/caffe/inc_lmdb/50_class/",
+  "filelist_bp": "/home/admin/data/ior50/ior50n/sI_inc/",
+  "conf_bp": "/home/vincenzo/serverexp/caffe_exp/ior50/incremental/sI/mid-vgg-cnn-m/",
+  "snapshots_bp": "/home/admin/data/ior50/ior50n/caffe/snapshots/",
+  "starting_weights": "/home/admin/data/caffemodels/VGG_CNN_M/VGG_CNN_M.caffemodel",
+  "batches_num": 8,
+  "num_runs": 10,
+  "conf_files": {
+        "solver_filename": "/home/vincenzo/serverexp/caffe_exp/ior50/incremental/sI/mid-vgg-cnn-m/inc_solver.prototxt",
+        "net_filename": "/home/vincenzo/serverexp/caffe_exp/ior50/incremental/sI/mid-vgg-cnn-m/inc_train_val.prototxt"
+  },
+  "first_batch_lr": 0.001,
+  "lrs": [0.001, 0.00005, 0.00001],
+  "num_inc_it": 100,
+  "first_batch_it": 2000,
+  "test_minibatch_size": 100,
+  "strategy": "naive",
+  "seed": 1
+}

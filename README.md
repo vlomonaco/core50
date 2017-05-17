@@ -19,15 +19,6 @@ benchmark. If you plan to use this dataset or other resources you'll find in thi
 You can find more information about the dataset and benchmark at: 
 [vlomonaco.github.io/core50](http://vlomonaco.github.io/core50).
 
-
-## About the code
-
-Up to now, the code used to run the experiments is all here. Still, we plan to
-add in the near future the sacred configuration files and a single script which
-can install missing dependencies, download all the (external) necessary 
-materials, set the local paths for you in order to easily reproduce the baselines
-you'll find in the paper. 
-
 ## Dependencies
 
 In order to extecute the code in the repository you'll need to install the following dependencies:
@@ -47,3 +38,87 @@ This work is licensed under a <a href="https://creativecommons.org/licenses/by/4
 ## Author
 
 * [Vincenzo Lomonaco](http://vincenzolomonaco.com) - email: *vincenzo.lomonaco@unibo.it*
+
+## Getting Started
+
+Up to now, the code used to run the experiments is all here. Still, we plan to
+add in the near future the sacred configuration files and a single script which
+can install missing dependencies, download all the (external) necessary 
+materials, set the local paths for you in order to easily reproduce the baselines
+you'll find in the paper. 
+
+### Project Structure
+```CORe50/
+├── confs
+│   ├── sI
+│   │   ├── mid-caffeNet
+│   │   │   ├── cumulative.json
+│   │   │   ├── inc_solver.prototxt
+│   │   │   ├── inc_train_val.prototxt
+│   │   │   └── naive.json
+│   │   └── mid-vgg-cnn-m
+│   │       ├── cumulative.json
+│   │       ├── inc_solver.prototxt
+│   │       ├── inc_train_val.prototxt
+│   │       └── naive.json
+│   ├── sII
+│   │   ├── mid-caffeNet
+│   │   │   ├── copyweights.json
+│   │   │   ├── copyweights_with_reinit.json
+│   │   │   ├── cumulative.json
+│   │   │   ├── freezeweights.json
+│   │   │   ├── inc_conv5fc8.prototxt
+│   │   │   ├── inc_conv5_multifc8.prototxt
+│   │   │   ├── inc_solver.prototxt
+│   │   │   ├── inc_train_val.prototxt
+│   │   │   └── naive.json
+│   │   └── mid-vgg
+│   │       ├── copyweights.json
+│   │       ├── copyweights_with_reinit.json
+│   │       ├── cumulative.json
+│   │       ├── freezeweights.json
+│   │       ├── inc_conv5fc8.prototxt
+│   │       ├── inc_solver.prototxt
+│   │       ├── inc_train_val.prototxt
+│   │       └── naive.json
+│   └── sIII
+│       ├── mid-caffeNet
+│       │   ├── copyweights_with_reinit.json
+│       │   ├── cumulative.json
+│       │   ├── inc_conv5fc8.prototxt
+│       │   ├── inc_conv5_multifc8.prototxt
+│       │   ├── inc_solver.prototxt
+│       │   ├── inc_train_val.prototxt
+│       │   └── naive.json
+│       └── mid-vgg
+│           ├── copyweights_with_reinit.json
+│           ├── cumulative.json
+│           ├── inc_conv5fc8.prototxt
+│           ├── inc_solver.prototxt
+│           ├── inc_train_val.prototxt
+│           └── naive.json
+├── core
+│   ├── convert_lmdb.py
+│   ├── core50_inc_finetuning.py
+│   ├── create_filelist_utils.py
+│   ├── create_sI_filelist.py
+│   ├── create_sII_filelist.py
+│   ├── create_sIII_filelist.py
+│   └── inc_finetuning.py
+├── data
+│   ├── batches_filelists.zip
+│   ├── NC.tsv
+│   ├── NIC.tsv
+│   ├── NI.tsv
+│   ├── results.pkl
+│   ├── results_tsv.zip
+│   ├── seq_results.pkl
+│   └── seq.tsv
+├── LICENSE
+├── README.md
+├── run_sI_exps.sh
+├── run_sII_exps.sh
+├── run_sIII_exps.sh
+└── scripts
+```
+

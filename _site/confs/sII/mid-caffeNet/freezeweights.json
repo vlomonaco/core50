@@ -1,0 +1,24 @@
+{
+  "name":"ior50 incremental finetuning - sII",
+  "scenario": 2,
+  "img_dim": 128,
+  "data_path": "/home/admin/Ior50N/128/",
+  "lmdb_bp": "/home/admin/data/ior50/ior50n/caffe/inc_lmdb/",
+  "filelist_bp": "/home/admin/data/ior50/ior50n/sII",
+  "conf_bp": "/home/vincenzo/serverexp/caffe_exp/ior50/incremental/sII/mid-caffeNet/",
+  "snapshots_bp": "/home/admin/data/ior50/ior50n/caffe/snapshots/",
+  "starting_weights": "/home/admin/data/caffemodels/caffeNet/bvlc_reference_caffenet.caffemodel",
+  "batches_num": 9,
+  "num_runs": 10,
+  "conf_files": {
+        "solver_filename": "/home/vincenzo/serverexp/caffe_exp/ior50/incremental/sII/mid-caffeNet/inc_solver.prototxt",
+        "net_filename": "/home/vincenzo/serverexp/caffe_exp/ior50/incremental/sII/mid-caffeNet/inc_conv5_multifc8.prototxt"
+  },
+  "first_batch_lr": 0.00001,
+  "lrs": [0.00001, 0.00005, 0.00001],
+  "num_inc_it": 150,
+  "first_batch_it": 300,
+  "test_minibatch_size": 100,
+  "strategy": "freezefc8",
+  "seed": 1
+}

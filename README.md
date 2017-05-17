@@ -1,6 +1,6 @@
 <img src="http://i.imgur.com/2UyfKHs.png?1" width="80" align="left">
 
-# Core50 
+# CORe50 
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 [![built with Python2.7](https://img.shields.io/badge/build%20with-python2.7-red.svg)](https://www.python.org/)
@@ -13,7 +13,7 @@
 
 - [x] CORe50 core code-base
 - [x] CORe50 benchmark configuration files
-- [x] Easy-access results data and baches configurations
+- [x] Easy-to-access results data and baches configurations
 - [ ] Getting started scripts
 - [ ] Easy-setup and demos
 

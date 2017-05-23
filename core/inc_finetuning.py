@@ -3,7 +3,6 @@
 
 ################################################################################
 # Copyright (c) 2017. Vincenzo Lomonaco. All rights reserved.                  #
-# Copyrights licensed under the MIT License.                                   #
 # See the accompanying LICENSE file for terms.                                 #
 #                                                                              #
 # Date: 28-04-2017                                                             #

@@ -57,20 +57,20 @@ As argued by many researchers, naïve approaches cannot avoid catastrophic forge
 
 	<a name="download"></a>
   <h1>Download</h1>
-	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the materials which could be useful for speeding-up the creation of new continuous learning strategies on CORe50. <br>
+	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the materials which could be useful for speeding-up the creation of new <i>continuous learning</i> strategies on CORe50. <br>
 
 <h3> Dataset </h3>
 <p>The dataset directory tree is not that different from what you may expect. For each session (<i>s1, s2, ..., s11</i>) we have 50 directories (<i>o1, o2, ..., o50</i>) representing the 50 objects contained in the dataset. Below you can see to which class each object instance id corresponds to:
-<pre><code>o1, ..., o5 -> plug adapters
-o6, ..., o10 -> mobile phones
-o11, ..., o15 -> scissors
-o16, ..., o20 -> light bulbs
-o21, ..., o25 -> cans
-o26, ..., o30 -> glasses
-o31, ..., o35 -> balls
-o36, ..., o40 -> markers
-o41, ..., o45 -> cups
-o46, ..., o50 -> remote controls
+<pre><code>[o1, ..., o5] -> plug adapters
+[o6, ..., o10] -> mobile phones
+[o11, ..., o15] -> scissors
+[o16, ..., o20] -> light bulbs
+[o21, ..., o25] -> cans
+[o26, ..., o30] -> glasses
+[o31, ..., o35] -> balls
+[o36, ..., o40] -> markers
+[o41, ..., o45] -> cups
+[o46, ..., o50] -> remote controls
 </code></pre>
 In each object directories, the temporal coherent frames are characterized by an unique filename with the format <i>"C_[session_num]_[obj_num]_[frame_seq_id].png"</i> :</p>
 <pre><code>CORe50/
@@ -102,16 +102,16 @@ Color004: 149 159 276 286
 
 <p>So, for each image <i>ColorID</i>, we have the bbox in the common format [<i>min x, min y, max x, max y</i>] of the <a href="https://it.mathworks.com/help/images/image-coordinate-systems.html">image coordinates system</a>.</p>
 
-<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
-<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/core50_128x128.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>Cropped_128x128_images.zip</strong>. <i> 128 x 128 images used for the CORe50 benchmark in the png format.</i></div>
-</div>
-
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/core50_350x350.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
 <strong>Full-size_350x350_images.zip</strong>. <i> 350 x 350 images before tracking in the png format.</i></div>
+</div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/core50_128x128.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<strong>Cropped_128x128_images.zip</strong>. <i> 128 x 128 images used for the CORe50 benchmark in the png format.</i></div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
@@ -120,11 +120,35 @@ Color004: 149 159 276 286
 <strong>Bbox.zip</strong>. <i>Bounding boxes for the full-size version in the txt format.</i></div>
 </div>
 
+<p>In order to better track the moving objects or to further improve the object recognition accuracy, we release also the <strong>depth map</strong> (easily convertible in a <strong>segmentation map</strong>) in the same format we have seen before for the coloured images:</p>
+<pre><code>CORe50/
+  |
+  |--- s1/
+  |    |------ o1/
+  |    |       |---- D_01_01_XXX.png
+  |    |       |---- ...
+  |    | 
+  |    |------ o2/
+  |    |------ ...
+  |    |------ o50/
+  |
+  |--- s2/
+  |--- s3/
+  |--- ...
+  |--- s11/
+</code></pre>
+
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
-<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_350x350_depth.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>Depth_map.zip</strong>. <i> <span style="color:#ff0000"> will be available soon!!!</span></i></div>
+<strong>Full-size_350x350_depth.zip</strong>. <i>Depth map for the full-size version in the png format (grayscale, transparent when the depth information is missing).</i></div>
 </div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_128x128_depth.zip""><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<strong>Cropped_128x128_depth.zip</strong>. <i>Depth map for the cropped version in the png format (grayscale, transparent when the depth information is missing).</i></div>
+</div><br>
 
 <h3> Configuration Files </h3>
 <p>Do you wanna use a different DL framework or programming language but still being able to compare your results with our benchmark? Well that's easy! Just <strong>download the batches filelists for each experiment</strong> in plain .txt format!
@@ -225,9 +249,10 @@ If you want to contribute or you find a bug, please <strong>make a PR</strong> o
   <h1>Contacts</h1>
 	This Dataset and Benchmark has been developed at the University of Bologna with the effort of different people:<br><br>
   <ul class="posts">
-     <li><span><a href="http://vincenzolomonaco.com"> Vincenzo Lomonaco</a></li>
- 		<li><span><a href="http://bias.csr.unibo.it/maltoni/main.htm"> Davide Maltoni</a></li>
- 		<li><span><a href=""></a> Riccardo Monica</li>
+     <li><span><a href="http://vincenzolomonaco.com"> Vincenzo Lomonaco</a> &#8226; <i>PhD Student</i></li>
+ 		<li><span><a href="http://bias.csr.unibo.it/maltoni/main.htm"> Davide Maltoni</a> &#8226; <i>Professor</i></li>
+ 		<li><span><a href="https://www.linkedin.com/in/riccardo-monica-2577a1123/"> Riccardo Monica </a> &#8226; <i>Master Student</i></li>
+		<li><span><a href="https://www.linkedin.com/in/martin-cimmino-23a87086/"> Martin Cimmino</a> &#8226; <i>Master Student</i></li>
   </ul>
 
 	<br>For further inquiries you are free to contact <strong>Vincenzo Lomonaco</strong> through his email: <i>vincenzo.lomonaco@unibo.it</i>

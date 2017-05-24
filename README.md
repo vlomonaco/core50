@@ -21,10 +21,10 @@ In this page we provide the code and all the materials related to the **CORe50**
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please **cite our latest paper**: 
 
 	@article{lomonaco2017core50,
-  	title={CORe50: a New Dataset and Benchmark for Continuous Object Recognition},
-  	author={Lomonaco, Vincenzo and Maltoni, Davide},
-  	journal={arXiv preprint arXiv:1705.03550},
-  	year={2017}
+     title={CORe50: a New Dataset and Benchmark for Continuous Object Recognition},
+     author={Lomonaco, Vincenzo and Maltoni, Davide},
+     journal={arXiv preprint arXiv:1705.03550},
+     year={2017}
 	}
 
 You can find more information about the dataset and benchmark at: 

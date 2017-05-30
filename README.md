@@ -75,6 +75,7 @@ CORe50/
 │
 ├── data
 │   ├── batches_filelists.zip
+│   ├── dataset_dims.zip
 │   ├── NC.tsv
 │   ├── NIC.tsv
 │   ├── NI.tsv

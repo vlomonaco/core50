@@ -120,7 +120,7 @@ Color004: 149 159 276 286
 <strong>Bbox.zip</strong>. <i>Bounding boxes for the full-size version in the txt format.</i></div>
 </div>
 
-<p>In order to better track the moving objects or to further improve the object recognition accuracy, we release also the <strong>depth map</strong> in the same format we have seen before for the coloured images:</p>
+<p>In order to better track the moving objects or to further improve the object recognition accuracy, we release also the <strong>depth map</strong> in the same format we have seen before for the colored images:</p>
 
 <pre><code>CORe50/
   |
@@ -139,14 +139,14 @@ Color004: 149 159 276 286
   |--- s11/
 </code></pre>
 
-<p>As you can see from <strong>Fig. 3</strong>, the depth map is not perfect (further enhancing preprocessing steps can be performed) but it can be also easily converted in a <strong>segmentation map</strong> using a moving threashold.</p>
+<p>As you can see from <strong>Fig. 3</strong>, the depth map is not perfect (further enhancing preprocessing steps can be performed) but it can be also easily converted in a <strong>segmentation map</strong> using a moving threshold.</p>
 
 <div style="text-align: center">
 <img src="imgs/D_05_33_179.png" alt="core50 dataset examples" style="width:30%; margin-top:10px; margin-right:20px;    background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;">
 <img src="imgs/C_05_33_179.png" alt="core50 dataset examples" style="width:30%; margin-top:10px;">
-<p><strong>Fig. 3</strong> <i>Example of a the depth map (Dark is far) of the object 33 with a complex background.</i> </p>
+<p><strong>Fig. 3</strong> <i>Example of a depth map (dark is far) for the object 33 with a complex background. Chessboard pattern where the depth information is missing.</i> </p>
 </div><br>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
@@ -233,7 +233,7 @@ A similar approach can be used with the <i>sequential experiments</i> of <strong
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/results.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>results.pkl</strong>. <i>Pre-loaded Python dict (pikled)</i>.</div>
+<strong>results.pkl</strong>. <i>Pre-loaded Python dict (pickled)</i>.</div>
 </div>
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/seq.tsv"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
@@ -244,7 +244,7 @@ A similar approach can be used with the <i>sequential experiments</i> of <strong
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/seq_results.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>seq_results.pkl</strong>. <i>Pre-loaded Python dict (pikled) for the sequential experiments</i>.</div>
+<strong>seq_results.pkl</strong>. <i>Pre-loaded Python dict (pickled) for the sequential experiments</i>.</div>
 </div>
 <h3> Code </h3>
 The raw code is already available in the master branch of <a href="https://github.com/vlomonaco/core50"> this github repository</a>! However, more scripts, examples and documentation notebooks are coming... stay tuned!

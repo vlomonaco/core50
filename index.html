@@ -90,7 +90,7 @@ In each object directories, the temporal coherent frames are characterized by an
   |--- s11/
 </code></pre>
 
-<p>Since we make available both the 350 x 350 original images and their cropped version (128 x 128), we thought it would be useful also to release the bounding boxes with respect to the original image size. <br>
+<p> Since we make available both the 350 x 350 original images and their cropped version (128 x 128), we thought it would be useful also to release the bounding boxes with respect to the original image size. <br>
 The bbox coordinates for each image are automatically extracted based on a very simple tracking technique, briefly described in the <a href="https://128.84.21.199/pdf/1705.03550">paper</a>. In the <i>bbox.zip</i> you can download below you will find for each object and session a different txt file. Each file follows the format:</p>
 <pre><code>Color000: 142 160 269 287
 Color001: 143 160 270 287
@@ -159,6 +159,14 @@ Color004: 149 159 276 286
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_128x128_depth.zip""><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
 <strong>Cropped_128x128_depth.zip</strong>. <i>Depth map for the cropped version in the png format (grayscale, transparent when the depth information is missing).</i></div>
+</div>
+
+<p>Finally, to make sure everything is there, you can check the exact number of (color + depth) images you're going to find for each object and session: </p>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/dataset_dims.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<strong>Dataset_dims.zip</strong>. <i> Exact number of frames for each object and session.</i></div>
 </div>
 
 <h3> Configuration Files </h3>

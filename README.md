@@ -48,27 +48,9 @@ pip install sacred
 
 * [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
 
-	Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
+Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
 
-## Getting Started
-
-In order to run the experiments and reproduce the benchmark first of all we need to download the pre-trained models and the CORe50 dataset. This can be automatically done using the script provided:
-
-```bash
-./scripts/fetch_data.sh
-```
-
-All the data will be downloaded in the [`data/`](data) directory. After this initial step you can directly run the experiments with the bash scripts [`run_sI_expts.sh`](run_sI_expts.sh), [`run_sII_expts.sh`](run_sII_expts.sh) and [`run_sIII_expts.sh`](run_sI_expts.sh) for the NI, NC and NIC scenarios respectively. 
-
-So for reproducing the first scenario experiments can be as easy as running:
-
-```bash
-./run_sI_expts.sh
-```
-
-Since this experiments can take a while (more than 24h depending on the scenario) you can also disable some experiments just by commenting them in the bash script.
-
-### Project Structure
+## Project Structure
 Up to now the projects is structured as follows:
 
 - [`confs/`](confs): In this folder you can find all the experiments configurations and the caffe definition files. sI, sII and sIII stand for the NI, NC and NIC scenarios, respectively.
@@ -81,6 +63,24 @@ Up to now the projects is structured as follows:
 - [`run_sI_exps.sh`](run_sI_exps.sh): Simple bash script for running the "New Instances (NI)" experiments with the different architectures and strategies
 - [`run_sII_exps.sh`](run_sII_exps.sh): Simple bash script for running the "New Classes (NC)" experiments with the different architectures and strategies
 - [`run_sIII_exps.sh`](run_sIII_exps.sh): Simple bash script for running the "New Instances and Classes (NIC)" experiments with the different architectures and strategies
+
+## Getting Started
+
+In order to run the experiments and reproduce the benchmark first of all we need to download the pre-trained models and the CORe50 dataset. This can be automatically done using the script provided:
+
+```bash
+./scripts/fetch_data.sh
+```
+
+All the data will be downloaded in the [`data/`](data) directory. After this initial step you can directly run the experiments with the bash scripts [`run_sI_exps.sh`](run_sI_exps.sh), [`run_sII_exps.sh`](run_sII_expts.sh) and [`run_sIII_exps.sh`](run_sI_expts.sh) for the NI, NC and NIC scenarios respectively. 
+
+For example, reproducing the first scenario experiments can be as easy as running:
+
+```bash
+./run_sI_exps.sh
+```
+
+Since this experiments can take a while (also more than 24h depending on the scenario) you can also disable some experiments just by commenting them in the bash script.
 
 ## License
 

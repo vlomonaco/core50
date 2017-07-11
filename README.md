@@ -14,8 +14,8 @@
 - [x] CORe50 core code-base
 - [x] CORe50 benchmark configuration files
 - [x] Easy-to-access results data and baches configurations
-- [ ] Getting started scripts
-- [ ] Easy-setup and demos
+- [ ] Easy-setup and getting started (in progress...)
+- [ ] Reproducibility test
 
 In this page we provide the code and all the materials related to the **CORe50** 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please **cite our [latest paper](https://arxiv.org/abs/1705.03550)**: 
@@ -43,24 +43,25 @@ Sacred is not really necessary (and you can easily remove from the source code i
 
 ## Getting Started
 
-Up to now, the code used to run the experiments is all here. Still, we plan to
-add in the near future the sacred configuration files and a single script which
-can install missing dependencies, download all the (external) necessary 
-materials, set the local paths for you in order to easily reproduce the baselines
-you'll find in the paper. 
+In order to run the experiments and reproduce the benchmark first of all we need to download the pre-trained models and the CORe50 dataset. This can be automatically done using the script provided:
+
+```bash
+./scripts/fetch_data.sh
+```
 
 ### Project Structure
 Up to now the projects is structured as follows:
 
 - [`confs/`](confs): In this folder you can find all the experiments configurations and the caffe definition files. sI, sII and sIII stand for the NI, NC and NIC scenarios, respectively.
 - [`core/`](core): The actual code of the benchmark.
-- [`data/`](data): Results and configuration files you can download without delving into the code.
+- [`data/`](data): Void at first. After the setup it will be filled with data needed for the experiments. It will also be used for storing partial computations.
+- [`extras/`](extras): Results and configuration files you can download without delving into the code.
 - [`scripts/`](scripts): Currently void. It will contain useful scripts to help you downloading the necessary extra materials. Bash scripts will be updated soon for running the benchmark without much pain.
-- [`LICENSE`](): Standard Creative Commons Attribution 4.0 International License.
-- [`README.md`](): This instructions file.
-- [`run_sI_exps.sh`](): Simple bash script for running the "New Instances (NI)" experiments with the different architectures and strategies
-- [`run_sII_exps.sh`](): Simple bash script for running the "New Classes (NC)" experiments with the different architectures and strategies
-- [`run_sIII_exps.sh`](): Simple bash script for running the "New Instances and Classes (NIC)" experiments with the different architectures and strategies
+- [`LICENSE`](LICENSE): Standard Creative Commons Attribution 4.0 International License.
+- [`README.md`](README.md): This instructions file.
+- [`run_sI_exps.sh`](run_sI_exps.sh): Simple bash script for running the "New Instances (NI)" experiments with the different architectures and strategies
+- [`run_sII_exps.sh`](run_sII_exps.sh): Simple bash script for running the "New Classes (NC)" experiments with the different architectures and strategies
+- [`run_sIII_exps.sh`](run_sIII_exps.sh): Simple bash script for running the "New Instances and Classes (NIC)" experiments with the different architectures and strategies
 
 ## License
 

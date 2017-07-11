@@ -53,20 +53,14 @@ you'll find in the paper.
 Up to now the projects is structured as follows:
 
 - [`confs/`](confs): In this folder you can find all the experiments configurations and the caffe definition files. sI, sII and sIII stand for the NI, NC and NIC scenarios, respectively.
-	- sI/
-	- sII/
-	- sIII/ 
 - [`core/`](core): The actual code of the benchmark.
 - [`data/`](data): Results and configuration files you can download without delving into the code.
 - [`scripts/`](scripts): Currently void. It will contain useful scripts to help you downloading the necessary extra materials. Bash scripts will be updated soon for running the benchmark without much pain.
-- LICENSE
-- README.md
-- run_sI_exps.sh
-- run_sII_exps.sh
-- run_sIII_exps.sh
-
-In **core** tin **data** r 
-Finally, **scripts**  
+- [`LICENSE`](): Standard Creative Commons Attribution 4.0 International License.
+- [`README.md`](): This instructions file.
+- [`run_sI_exps.sh`](): Simple bash script for running the "New Instances (NI)" experiments with the different architectures and strategies
+- [`run_sII_exps.sh`](): Simple bash script for running the "New Classes (NC)" experiments with the different architectures and strategies
+- [`run_sIII_exps.sh`](): Simple bash script for running the "New Instances and Classes (NIC)" experiments with the different architectures and strategies
 
 ## License
 

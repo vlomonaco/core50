@@ -14,8 +14,8 @@
 - [x] CORe50 core code-base
 - [x] CORe50 benchmark configuration files
 - [x] Easy-to-access results data and baches configurations
-- [ ] _Easy-setup and getting started (in progress...)_
-- [ ] _Reproducibility tests_
+- [ ] **Easy-setup and getting started** (in progress...)
+- [ ] Reproducibility tests
 
 In this page we provide the code and all the materials related to the **CORe50** 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please **cite our [latest paper](https://arxiv.org/abs/1705.03550)**: 
@@ -34,17 +34,17 @@ You can find more information about the dataset and benchmark at:
 
 In order to extecute the code in the repository you'll need to install the following dependencies in a [Python 2.7](https://www.python.org/) environment:
 
-* [Numpy](https://pypi.python.org/pypi/numpy/1.6.1): matrices operations and stuff
+* [Numpy](https://pypi.python.org/pypi/numpy/1.6.1): _Matrices operations and stuff_
 ```bash
 pip install numpy
 ```
-* [Caffe](http://caffe.berkeleyvision.org/): Actual DL backhand (easily interchangeable)
+* [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
 
-```
+
 Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
-```
 
-* [Sacred](https://github.com/IDSIA/sacred): Experiments Manager
+
+* [Sacred](https://github.com/IDSIA/sacred): _Experiments Manager_
 
 ```bash
 pip install sacred

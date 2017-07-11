@@ -18,7 +18,7 @@
 - [ ] Easy-setup and demos
 
 In this page we provide the code and all the materials related to the **CORe50** 
-benchmark. If you plan to use this dataset or other resources you'll find in this page, please **cite our latest paper**: 
+benchmark. If you plan to use this dataset or other resources you'll find in this page, please **cite our [latest paper](https://arxiv.org/abs/1705.03550)**: 
 
 	@article{lomonaco2017core50,
        title={CORe50: a New Dataset and Benchmark for Continuous Object Recognition},
@@ -54,42 +54,23 @@ you'll find in the paper.
 Up to now the projects is structured as follows:
 ```
 CORe50/
-├── confs
-│   ├── sI
-│   │   └── ...
+├── [`confs/`](confs)
+│   ├── sI/
 │   │   
-│   ├── sII
-│   │   └── ...
+│   ├── sII/
 │   │   
-│   └── sIII 
-│       └── ...
+│   └── sIII/ 
 │
-├── core
-│   ├── convert_lmdb.py
-│   ├── core50_inc_finetuning.py
-│   ├── create_filelist_utils.py
-│   ├── create_sI_filelist.py
-│   ├── create_sII_filelist.py
-│   ├── create_sIII_filelist.py
-│   └── inc_finetuning.py
+├── core/
 │
-├── data
-│   ├── batches_filelists.zip
-│   ├── dataset_dims.zip
-│   ├── NC.tsv
-│   ├── NIC.tsv
-│   ├── NI.tsv
-│   ├── results.pkl
-│   ├── results_tsv.zip
-│   ├── seq_results.pkl
-│   └── seq.tsv
+├── data/
 │
 ├── LICENSE
 ├── README.md
 ├── run_sI_exps.sh
 ├── run_sII_exps.sh
 ├── run_sIII_exps.sh
-└── scripts
+└── scripts/
 ```
 
 In the **confs** folder you can find all the experiments configurations and the caffe

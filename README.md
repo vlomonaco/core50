@@ -32,9 +32,8 @@ You can find more information about the dataset and benchmark at:
 
 ## Dependencies
 
-In order to extecute the code in the repository you'll need to install the following dependencies:
+In order to extecute the code in the repository you'll need to install the following dependencies in a [Python 2.7](https://www.python.org/) environment:
 
-* [Python 2.7](https://www.python.org/)
 * [Numpy](https://pypi.python.org/pypi/numpy/1.6.1)
 * [Caffe](http://caffe.berkeleyvision.org/)
 * [Sacred](https://github.com/IDSIA/sacred)
@@ -54,7 +53,7 @@ you'll find in the paper.
 Up to now the projects is structured as follows:
 ```
 CORe50/
-├── [`confs/`](confs)
+├── ```[`confs/`](confs)```
 │   ├── sI/
 │   │   
 │   ├── sII/

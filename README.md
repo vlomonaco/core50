@@ -38,18 +38,18 @@ In order to extecute the code in the repository you'll need to install the follo
 ```bash
 pip install numpy
 ```
-* [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
-
-
-Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
-
 
 * [Sacred](https://github.com/IDSIA/sacred): _Experiments Manager_
 
 ```bash
 pip install sacred
 ```
-If you find any problem look at the doc [here](https://github.com/IDSIA/sacred).
+	If you find any problem look at the doc [here](https://github.com/IDSIA/sacred).
+
+* [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
+
+
+	Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
 
 ## Getting Started
 

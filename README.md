@@ -35,15 +35,16 @@ You can find more information about the dataset and benchmark at:
 In order to extecute the code in the repository you'll need to install the following dependencies in a [Python 2.7](https://www.python.org/) environment:
 
 * [Numpy](https://pypi.python.org/pypi/numpy/1.6.1): _Matrices operations and stuff_
-```bash
-pip install numpy
-```
+
+	```bash
+	pip install numpy
+	```
 
 * [Sacred](https://github.com/IDSIA/sacred): _Experiments Manager_
 
-```bash
-pip install sacred
-```
+	```bash
+	pip install sacred
+	```
 
 * [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
 

@@ -29,13 +29,7 @@ benchmark. If you plan to use this dataset or other resources you'll find in thi
        year={2017}
 	}
 
-In this page you'll find:
-
-* [Dependencies](https://github.com/vlomonaco/core50#dependencies)
-* [Project Structure](https://github.com/vlomonaco/core50#project-structure)
-* [Getting Started](https://github.com/vlomonaco/core50#getting-started)
-
-Then, you can find more information about the dataset and benchmark at as well as additional data to download at: 
+You can find more information about the dataset and benchmark at as well as additional data to download at: 
 [vlomonaco.github.io/core50](http://vlomonaco.github.io/core50).
 
 ----------------------------------------------

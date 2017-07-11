@@ -51,26 +51,19 @@ you'll find in the paper.
 
 ### Project Structure
 Up to now the projects is structured as follows:
-```
-CORe50/
-├── ```[`confs/`](confs)```
-│   ├── sI/
-│   │   
-│   ├── sII/
-│   │   
-│   └── sIII/ 
-│
-├── core/
-│
-├── data/
-│
-├── LICENSE
-├── README.md
-├── run_sI_exps.sh
-├── run_sII_exps.sh
-├── run_sIII_exps.sh
-└── scripts/
-```
+
+- [`confs/`](confs)
+	- sI/
+	- sII/
+	- sIII/ 
+- core/
+- data/
+- scripts/
+- LICENSE
+- README.md
+- run_sI_exps.sh
+- run_sII_exps.sh
+- run_sIII_exps.sh
 
 In the **confs** folder you can find all the experiments configurations and the caffe
 definition files. In **core** the actual code of the benchmark; in **data** results and configuration files you can download without delving into the code. 

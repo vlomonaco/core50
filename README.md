@@ -29,6 +29,7 @@ benchmark. If you plan to use this dataset or other resources you'll find in thi
 
 You can find more information about the dataset and benchmark at: 
 [vlomonaco.github.io/core50](http://vlomonaco.github.io/core50).
+----------------------------------------------
 
 ## Dependencies
 
@@ -50,6 +51,8 @@ pip install sacred
 
 Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
 
+----------------------------------------------
+
 ## Project Structure
 Up to now the projects is structured as follows:
 
@@ -63,6 +66,8 @@ Up to now the projects is structured as follows:
 - [`run_sI_exps.sh`](run_sI_exps.sh): Simple bash script for running the "New Instances (NI)" experiments with the different architectures and strategies
 - [`run_sII_exps.sh`](run_sII_exps.sh): Simple bash script for running the "New Classes (NC)" experiments with the different architectures and strategies
 - [`run_sIII_exps.sh`](run_sIII_exps.sh): Simple bash script for running the "New Instances and Classes (NIC)" experiments with the different architectures and strategies
+
+----------------------------------------------
 
 ## Getting Started
 
@@ -82,9 +87,13 @@ For example, reproducing the first scenario experiments can be as easy as runnin
 
 Since this experiments can take a while (also more than 24h depending on the scenario) you can also disable some experiments just by commenting them in the bash script.
 
+----------------------------------------------
+
 ## License
 
 This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. 
+
+----------------------------------------------
 
 ## Author
 

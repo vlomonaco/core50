@@ -36,15 +36,15 @@ In order to extecute the code in the repository you'll need to install the follo
 
 * [Numpy](https://pypi.python.org/pypi/numpy/1.6.1): _Matrices operations and stuff_
 
-	```bash
-	pip install numpy
-	```
+```bash
+pip install numpy
+```
 
 * [Sacred](https://github.com/IDSIA/sacred): _Experiments Manager_
 
-	```bash
-	pip install sacred
-	```
+```bash
+pip install sacred
+```
 
 * [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
 
@@ -57,6 +57,16 @@ In order to run the experiments and reproduce the benchmark first of all we need
 ```bash
 ./scripts/fetch_data.sh
 ```
+
+All the data will be downloaded in the [`data/`](data) directory. After this initial step you can directly run the experiments with the bash scripts [`run_sI_expts.sh`](run_sI_expts.sh), [`run_sII_expts.sh`](run_sII_expts.sh) and [`run_sIII_expts.sh`](run_sI_expts.sh) for the NI, NC and NIC scenarios respectively. 
+
+So for reproducing the first scenario experiments can be as easy as running:
+
+```bash
+./run_sI_expts.sh
+```
+
+Since this experiments can take a while (more than 24h depending on the scenario) you can also disable some experiments just by commenting them in the bash script.
 
 ### Project Structure
 Up to now the projects is structured as follows:

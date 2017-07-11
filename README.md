@@ -9,6 +9,8 @@
 
 ## A new Dataset and Benchmark for Continuous Object Recognition
 
+----------------------------------------------
+
 #### *WARNING: This repository is still under construction!*
 
 - [x] CORe50 core code-base

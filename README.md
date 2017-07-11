@@ -48,7 +48,7 @@ In order to extecute the code in the repository you'll need to install the follo
 
 * [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
 
-		Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
+	Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
 
 ## Getting Started
 

@@ -52,22 +52,21 @@ you'll find in the paper.
 ### Project Structure
 Up to now the projects is structured as follows:
 
-- [`confs/`](confs)
+- [`confs/`](confs): In this folder you can find all the experiments configurations and the caffe definition files. sI, sII and sIII stand for the NI, NC and NIC scenarios, respectively.
 	- sI/
 	- sII/
 	- sIII/ 
-- core/
-- data/
-- scripts/
+- [`core/`](core): The actual code of the benchmark.
+- [`data/`](data): Results and configuration files you can download without delving into the code.
+- [`scripts/`](scripts): Currently void. It will contain useful scripts to help you downloading the necessary extra materials. Bash scripts will be updated soon for running the benchmark without much pain.
 - LICENSE
 - README.md
 - run_sI_exps.sh
 - run_sII_exps.sh
 - run_sIII_exps.sh
 
-In the **confs** folder you can find all the experiments configurations and the caffe
-definition files. In **core** the actual code of the benchmark; in **data** results and configuration files you can download without delving into the code. 
-Finally, **scripts** (currently void) will contain useful scripts to help you downloading the necessary extra materials. Bash scripts will be updated soon for running the benchmark without much pain. 
+In **core** tin **data** r 
+Finally, **scripts**  
 
 ## License
 

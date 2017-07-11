@@ -48,7 +48,9 @@ pip install sacred
 
 * [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
 
-	Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
+```bash
+Follow the step-by-step guide for installing caffe here: http://caffe.berkeleyvision.org/installation.html. 
+```
 
 ## Getting Started
 

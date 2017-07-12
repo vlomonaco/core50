@@ -259,16 +259,17 @@ layer {
   top: "pool5_flat"
 }
 # --------------------- starting multiple fc8 per batch ------------------------
+# !!! WARNING: up to know you need to reset manually lr_mult:1 before training !!!!
 layer {
   name: "mid_fc8_batch0"
   type: "InnerProduct"
   bottom: "pool5_flat"
   top: "mid_fc8_batch0"
   param {
-	lr_mult: 0
+	lr_mult: 1
   }
   param {
-	lr_mult: 0
+	lr_mult: 2
   }
   inner_product_param {
     num_output: 10
@@ -288,10 +289,10 @@ layer {
   bottom: "pool5_flat"
   top: "mid_fc8_batch1"
   param {
-	lr_mult: 0
+	lr_mult: 1
   }
   param {
-	lr_mult: 0
+	lr_mult: 2
   }
   inner_product_param {
     num_output: 5
@@ -311,10 +312,10 @@ layer {
   bottom: "pool5_flat"
   top: "mid_fc8_batch2"
   param {
-	lr_mult: 0
+	lr_mult: 1
   }
   param {
-	lr_mult: 0
+	lr_mult: 2
   }
   inner_product_param {
     num_output: 5
@@ -334,10 +335,10 @@ layer {
   bottom: "pool5_flat"
   top: "mid_fc8_batch3"
   param {
-	lr_mult: 0
+	lr_mult: 1
   }
   param {
-	lr_mult: 0
+	lr_mult: 2
   }
   inner_product_param {
     num_output: 5
@@ -357,10 +358,10 @@ layer {
   bottom: "pool5_flat"
   top: "mid_fc8_batch4"
   param {
-	lr_mult: 0
+	lr_mult: 1
   }
   param {
-	lr_mult: 0
+	lr_mult: 2
   }
   inner_product_param {
     num_output: 5
@@ -380,10 +381,10 @@ layer {
   bottom: "pool5_flat"
   top: "mid_fc8_batch5"
   param {
-	lr_mult: 0
+	lr_mult: 1
   }
   param {
-	lr_mult: 0
+	lr_mult: 2
   }
   inner_product_param {
     num_output: 5

@@ -66,9 +66,9 @@ Up to now the projects is structured as follows:
 - [`scripts/`](scripts): Currently void. It will contain useful scripts to help you downloading the necessary extra materials. Bash scripts will be updated soon for running the benchmark without much pain.
 - [`LICENSE`](LICENSE): Standard Creative Commons Attribution 4.0 International License.
 - [`README.md`](README.md): This instructions file.
-- [`run_sI_exps.sh`](run_sI_exps.sh): Simple bash script for running the "New Instances (NI)" experiments with the different architectures and strategies
-- [`run_sII_exps.sh`](run_sII_exps.sh): Simple bash script for running the "New Classes (NC)" experiments with the different architectures and strategies
-- [`run_sIII_exps.sh`](run_sIII_exps.sh): Simple bash script for running the "New Instances and Classes (NIC)" experiments with the different architectures and strategies
+- [`run_sI_exps.sh`](run_sI_exps.sh): Simple bash script for running the _"New Instances (NI)"_ experiments with the different architectures and strategies
+- [`run_sII_exps.sh`](run_sII_exps.sh): Simple bash script for running the _"New Classes (NC)"_ experiments with the different architectures and strategies
+- [`run_sIII_exps.sh`](run_sIII_exps.sh): Simple bash script for running the _"New Instances and Classes (NIC)"_ experiments with the different architectures and strategies
 
 ----------------------------------------------
 

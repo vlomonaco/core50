@@ -16,8 +16,8 @@
 - [x] CORe50 core code-base
 - [x] CORe50 benchmark configuration files
 - [x] Easy-to-access results data and baches configurations
-- [ ] **Easy-setup and getting started** (in progress...)
-- [ ] Reproducibility tests
+- [x] Easy-setup and getting started 
+- [ ] **Reproducibility tests** (in progress...)
 
 In this page we provide the code and all the materials related to the **CORe50** 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please **cite our [latest paper](https://arxiv.org/abs/1705.03550)**: 
@@ -89,6 +89,16 @@ For example, reproducing the first scenario experiments can be as easy as runnin
 ```
 
 Since this experiments can take a while (also more than 24h depending on the scenario) you can also disable some experiments just by commenting them in the bash script.
+
+----------------------------------------------
+
+## troubleshooting
+
+- If you find different results from out benchmark (for a few percentage points) that is to be expected! First of all because we use the cudnn engine which is not fully deterministic for convolutions. Second because the error may be accumulated during the incremental learning process. If you want full reproducibility (which means a x2 in terms of time) just set the `engine` param of convolution [to 1](http://caffe.berkeleyvision.org/tutorial/layers/convolution.html).
+
+- If you find some trouble with the `freezeweights` strategy this is probably because you need to reset the learning rate multipliers in the prototxt (sorry, my bad.. I'm currently working on a new version of the code for creating the prototxt files instead of modifying them on the fly.).
+
+- Ehei! If you find any trouble don't get frustrated, just ask, We'll answer in a few hours! :-)
 
 ----------------------------------------------
 

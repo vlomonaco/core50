@@ -50,7 +50,7 @@ pip install numpy
 pip install sacred
 ```
 
-* [Caffe](http://caffe.berkeleyvision.org/): _Actual DL back-end (easily interchangeable)_
+* [Caffe](http://caffe.berkeleyvision.org/): _Current DL back-end (easily interchangeable)_
 
 Follow the step-by-step guide for installing caffe [here](http://caffe.berkeleyvision.org/installation.html). 
 
@@ -94,11 +94,11 @@ Since this experiments can take a while (also more than 24h depending on the sce
 
 ## Troubleshooting
 
-- If you find different results from out benchmark (for a few percentage points) _that is to be expected_! First of all because we use the `cudnn` engine which is not fully deterministic for convolutions. Second because the error may be accumulated during the incremental learning process. If you want full reproducibility (which means a ~2x in terms of time needed) just set the `engine` param of convolution [to 1](http://caffe.berkeleyvision.org/tutorial/layers/convolution.html).
+- If you find different results from out benchmark (for a few percentage points) _that is to be expected_! First of all because we use the `cudnn` engine which is not fully deterministic for convolutions. Second because the error may be accumulated during the incremental learning process. If you want full reproducibility (which means a ~2x in terms of time needed) just set the `engine` param of convolutions [to 1](http://caffe.berkeleyvision.org/tutorial/layers/convolution.html).
 
 - If you find some trouble with the `freezeweights` strategy this is probably because you need to reset the learning rate multipliers in the prototxt (sorry, my bad.. I'm currently working on a new version of the code for creating the prototxt files instead of modifying them on the fly.).
 
-- Hei! If you find any trouble don't get frustrated, just ask, we'll answer in a few hours! :-)
+- Hey! If you find any trouble don't get frustrated, just ask, we'll answer in a few hours! :-)
 
 ----------------------------------------------
 

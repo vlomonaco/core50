@@ -61,9 +61,9 @@ Up to now the projects is structured as follows:
 
 - [`confs/`](confs): In this folder you can find all the experiments configurations and the caffe definition files. sI, sII and sIII stand for the NI, NC and NIC scenarios, respectively.
 - [`core/`](core): The actual code of the benchmark.
-- [`data/`](data): Void at first. After the setup it will be filled with data needed for the experiments. It will also be used for storing partial computations.
+- [`data/`](data): After the setup it will be created and filled with data needed for the experiments. It will also be used for storing partial computations.
 - [`extras/`](extras): Results and configuration files you can download without delving into the code.
-- [`scripts/`](scripts): Currently void. It will contain useful scripts to help you downloading the necessary extra materials. Bash scripts will be updated soon for running the benchmark without much pain.
+- [`scripts/`](scripts): It contains useful scripts to help you downloading the necessary materials and setup the environment.
 - [`LICENSE`](LICENSE): Standard Creative Commons Attribution 4.0 International License.
 - [`README.md`](README.md): This instructions file.
 - [`run_sI_exps.sh`](run_sI_exps.sh): Simple bash script for running the _"New Instances (NI)"_ experiments with the different architectures and strategies
@@ -77,7 +77,7 @@ Up to now the projects is structured as follows:
 In order to run the experiments and reproduce the benchmark first of all we need to download the pre-trained models and the CORe50 dataset. This can be automatically done using the script provided:
 
 ```bash
-./scripts/fetch_data.sh
+./scripts/fetch_data_and_setup.sh
 ```
 
 All the data will be downloaded in the [`data/`](data) directory. After this initial step you can directly run the experiments with the bash scripts [`run_sI_exps.sh`](run_sI_exps.sh), [`run_sII_exps.sh`](run_sII_expts.sh) and [`run_sIII_exps.sh`](run_sI_expts.sh) for the NI, NC and NIC scenarios respectively. 

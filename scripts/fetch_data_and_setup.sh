@@ -16,4 +16,4 @@ echo "Downloading Core50 (128x128 version)..."
 wget --directory-prefix=$DIR'/../data/' http://bias.csr.unibo.it/maltoni/download/core50/core50_128x128.zip
 
 echo "Unzipping Core50..."
-unzip ./data/core50_128x128.zipfile.zip -d $DIR/../data/
+unzip $DIR/../data/core50_128x128.zipfile.zip -d $DIR/../data/

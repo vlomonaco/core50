@@ -74,7 +74,7 @@ Up to now the projects is structured as follows:
 
 ## Getting Started
 
-First of all, let's download the repository:
+First of all, let's clone the repository:
 
 ```bash
 git clone https://github.com/vlomonaco/core50.git

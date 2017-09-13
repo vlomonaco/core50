@@ -74,9 +74,16 @@ Up to now the projects is structured as follows:
 
 ## Getting Started
 
-In order to run the experiments and reproduce the benchmark first of all we need to download the pre-trained models and the CORe50 dataset. This can be automatically done using the script provided:
+First of all, let's download the repository:
 
 ```bash
+git clone https://github.com/vlomonaco/core50.git
+```
+
+Then, in order to run the experiments and reproduce the benchmark we need to download the pre-trained models and the CORe50 dataset. This can be automatically done using the script provided:
+
+```bash
+cd core50
 ./scripts/fetch_data_and_setup.sh
 ```
 

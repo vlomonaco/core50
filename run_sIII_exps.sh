@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Running NIC experiments
 echo "running mid-caffenet, naive.."
 python core/core50_inc_finetuning.py with confs/sIII/mid-caffeNet/naive.json -c "sIII 1.0: mid-caffenet, naive strategy, 10-run experiments" 2> data/logs/caffe.out > data/logs/sIII_caffenet_naive.out
 sleep 1

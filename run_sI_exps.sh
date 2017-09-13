@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Running NI experiments
 echo "running mid-caffenet, naive.."
 python core/core50_inc_finetuning.py with confs/sI/mid-caffeNet/naive.json -c "mid-caffenet, naive strategy, 10-run experiments, 2000 first batch it" 2> data/logs/caffe.out > data/logs/caffenet_naive.out
 sleep 1

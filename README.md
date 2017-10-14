@@ -29,7 +29,7 @@ benchmark. If you plan to use this dataset or other resources you'll find in thi
        year={2017}
 	}
 
-You can find more information about the dataset and benchmark at as well as additional data to download at: 
+You can find more information about the dataset/benchmark as well as additional data to download at: 
 [vlomonaco.github.io/core50](http://vlomonaco.github.io/core50).
 
 ----------------------------------------------

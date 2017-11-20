@@ -67,11 +67,11 @@ As you probably noted from the description above, our benchmark is somehow diffe
 </ol>
 
 In the first and last benchmarks the output distribution stay fixed across all the tasks (each task has all the possible digits and actions in the Atari games) making it more similar to our <strong>NI scenario</strong>. <br>
-However, in the other cases, the output distributions are always <strong>treated separately</strong> for each task (and the model is evaluated on each of them separately) making it more easier than our <strong>NC scenario</strong> where we are actually <strong>adding new dimensions</strong> to the same output distribution (i.e new classes).<br><br>
+However, in the other cases, the output distributions are always <strong>treated separately</strong> for each task (each one has its own separated classes) making it more easier than our <strong>NC scenario</strong> where we are actually <strong>adding new dimensions</strong> to the same output distribution (new classes which have to be distinguished from <strong>all</strong> the previous ones).<br><br>
 
-this not only more suitable for Object Recognition (where we want to recognize an object across the whole objects space) but for any real-world application where the notion of <i>"task"</i> is futile if not misleading. Moreover, it allow us to introduce the <strong>NIC scenario</strong> on which no CL strategy has been assessed before.<br><br>
+This not only more suitable for <i>Object Recognition</i>i> (where we want to recognize an object across the whole objects space) but for any real-world application where the notion of <i>"task"</i> is futile if not misleading. Moreover, it allow us to introduce the <strong>NIC scenario</strong> on which no CL strategy has been ever assessed before.<br><br>
 
-Please also note that we decided for simplicity to <strong>keep the test set fixed</strong> across all batches (check section 5.2 of the <a href="https://arxiv.org/abs/1705.03550" target="_blank">paper</a> for further details).
+Please also note that we decided for simplicity to <strong>keep the test set fixed</strong> across all batches (check section 5.2 of the <a href="https://arxiv.org/abs/1705.03550" target="_blank">paper</a> for further a discussion about this choice).
 </p>
 
 	<a name="download"></a>

@@ -55,20 +55,22 @@ In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in 
 
 As argued by many researchers, naïve approaches cannot avoid catastrophic forgetting in complex real-world scenarios such as <strong>NC</strong> and <strong>NIC</strong>. In our work we have designed <strong>simple baselines</strong> which can perform markedly better than naïve strategies but still leave much room for improvements (see <strong> Fig. 2</strong>). Check it out the full results on our <a href="https://arxiv.org/abs/1705.03550" target="_blank">paper</a> or download them as tsv or python dicts in the section below!
 
-<h3> Major difference from other Continuous Learning benchmarks </h3>
+<h3> Differences with other CL benchmarking protocols </h3>
 <p>
 As you probably noted from the description above, our benchmark is somehow different from the more common benchmarks used in the Continuous Learning literature. During the past few years different CL strategies has been introduced essentially on the following benchmarks:
+
 <ol class="posts">
-      <li><span><strong>Permuted MNIST</strong></li><br>      
-      <li><span><strong>MNIST Split</strong></li><br>
-      <li><span><strong>CIFAR10/100 Split</strong></li><br>
-      <li><span><strong>ILSVRC2012 Split</strong></li><br>
-      <li><span><strong>Atari Games</strong></li><br> 
+      <li><span><strong>Permuted MNIST</strong></li><   
+      <li><span><strong>MNIST Split</strong></li>
+      <li><span><strong>CIFAR10/100 Split</strong></li>
+      <li><span><strong>ILSVRC2012 Split</strong></li>
+      <li><span><strong>Atari Games</strong></li>
 </ol>
 
-In the first and last benchmark the output distribution stay fixed across all the tasks (each task has all the possible digits and actions in the Atari games) making it more similar to our NI scenario. However, in the other cases, the output distributions are always treated separately for each task (and the model is evaluated on each of them separately) making it more easier than our NC scenario where we are actually adding new dimensions to the same output distribution (i.e new classes).
+In the first and last benchmark the output distribution stay fixed across all the tasks (each task has all the possible digits and actions in the Atari games) making it more similar to our NI scenario. <br>
+However, in the other cases, the output distributions are always <strong>treated separately</strong> for each task (and the model is evaluated on each of them separately) making it more easier than our <strong>NC scenario</strong> where we are actually <strong>adding new dimensions</strong> to the same output distribution (i.e new classes).
 
-this not only more suitable for Object Recognition (where we want to recognize an object among all the objects we have encountered so far) but for any real-world application where the notion of "task" is futile if not inconsistent. Moreover it allow us to introduce the NIC scenario on which no CL strategy has been assessed before.
+this not only more suitable for Object Recognition (where we want to recognize an object among all the objects we have encountered so far) but for any real-world application where the notion of <i>"task"</i> is futile if not inconsistent. Moreover it allow us to introduce the <strong>NIC scenario</strong> on which no CL strategy has been assessed before.
 </p>
 
 	<a name="download"></a>

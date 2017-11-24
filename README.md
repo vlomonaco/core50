@@ -15,8 +15,8 @@
 
 - [x] CORe50 core code-base
 - [x] CORe50 benchmark configuration files
-- [x] Easy-to-access results data and baches configurations
-- [x] Easy-setup and getting started 
+- [x] Easy-to-access results data and batches configurations
+- [x] Easy-setup, getting started and Python data loader
 - [ ] **Reproducibility tests** (in progress...)
 
 In this page we provide the code and all the materials related to the **CORe50** 
@@ -63,7 +63,7 @@ Up to now the projects is structured as follows:
 - [`core/`](core): The actual code of the benchmark.
 - [`data/`](data): After the setup it will be created and filled with data needed for the experiments. It will also be used for storing partial computations.
 - [`extras/`](extras): Results and configuration files you can download without delving into the code.
-- [`scripts/`](scripts): It contains useful scripts to help you downloading the necessary materials and setup the environment.
+- [`scripts/`](scripts): It contains useful scripts to help you downloading the necessary materials, setup the environment or load the data for your experiments in Python.
 - [`LICENSE`](LICENSE): Standard Creative Commons Attribution 4.0 International License.
 - [`README.md`](README.md): This instructions file.
 - [`run_sI_exps.sh`](run_sI_exps.sh): Simple bash script for running the _"New Instances (NI)"_ experiments with the different architectures and strategies
@@ -84,7 +84,7 @@ Then, in order to run the experiments and reproduce the benchmark we need to dow
 
 ```bash
 cd core50
-./scripts/fetch_data_and_setup.sh
+./scripts/bash/fetch_data_and_setup.sh
 ```
 
 All the data will be downloaded in the [`data/`](data) directory. After this initial step you can directly run the experiments with the bash scripts [`run_sI_exps.sh`](run_sI_exps.sh), [`run_sII_exps.sh`](run_sII_expts.sh) and [`run_sIII_exps.sh`](run_sI_expts.sh) for the NI, NC and NIC scenarios respectively. 

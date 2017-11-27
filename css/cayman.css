@@ -182,6 +182,8 @@ a:hover { text-decoration: underline; }
 .main-content dl dd { padding: 0; margin-bottom: 1rem; }
 .main-content hr { height: 2px; padding: 0; margin: 1rem 0; background-color: #eff0f1; border: 0; }
 
+@media screen and (min-width: 64em) {#leader_btn {width: 638px; margin-left:0px;} }
+
 .site-footer { padding-top: 20px; margin-top: 4rem; border-top: 2px solid #dddddd; }
 @media screen and (min-width: 64em) { .site-footer { font-size: 1rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) { .site-footer { font-size: 1rem; } }
@@ -190,3 +192,58 @@ a:hover { text-decoration: underline; }
 .site-footer-owner { display: block; font-weight: bold; }
 
 .site-footer-credits { color: #819198; font-size:15px;}
+
+/* New table stuff */
+#wrapper {
+  display: block;
+  background: #fff;
+  margin: 0 auto;
+  padding: 10px 17px;
+}
+
+.keywords {
+  margin: 0 auto;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+
+.keywords thead {
+  cursor: pointer;
+  background: #c9dff0;
+}
+.keywords thead tr th { 
+  font-weight: bold;
+  padding: 12px 30px;
+  padding-left: 42px;
+}
+.keywords thead tr th span { 
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+.keywords thead tr th.headerSortUp, .keywords thead tr th.headerSortDown {
+  background: #acc8dd;
+}
+
+.keywords thead tr th.headerSortUp span {
+  background-image: url('https://i.imgur.com/SP99ZPJ.png');
+}
+.keywords thead tr th.headerSortDown span {
+  background-image: url('https://i.imgur.com/RkA9MBo.png');
+}
+
+
+.keywords tbody tr { 
+  color: #555;
+}
+.keywords tbody tr td {
+  text-align: center;
+  padding: 15px 10px;
+}
+.keywords tbody tr td.lalign {
+  text-align: left;
+}
+}
+

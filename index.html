@@ -17,7 +17,7 @@ If you plan to use this dataset or other resources you'll find in this page, <st
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/pdf_download.png" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-left:60px"> 
-<i> Vincenzo Lomonaco and Davide Maltoni. <a href="http://proceedings.mlr.press/v78/lomonaco17a.html" target="_blank">"CORe50: a new Dataset and Benchmark for Continuous Object Recognition".</a> Proceedings of the 1st Annual Conference on Robot Learning, PMLR 78:17-26, 2017. </i></div>
+<i> Vincenzo Lomonaco and Davide Maltoni. <a href="http://proceedings.mlr.press/v78/lomonaco17a.html" target="_blank">"CORe50: a new Dataset and Benchmark for Continuous Object Recognition".</a> Proceedings of the 1st Annual Conference on Robot Learning, PMLR 78:17-26, 2017. </i>`</div>
 </div>
 
 	<a name="dataset"></a>
@@ -126,20 +126,39 @@ Color004: 149 159 276 286
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_350x350.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>Full-size_350x350_images.zip</strong>. <i> 350 x 350 images before tracking in the png format.</i></div>
+<strong>full-size_350x350_images.zip</strong>. <i> 350 x 350 images before tracking in the png format.</i></div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_128x128.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>Cropped_128x128_images.zip</strong>. <i> 128 x 128 images used for the CORe50 benchmark in the png format.</i></div>
+<strong>cropped_128x128_images.zip</strong>. <i> 128 x 128 images used for the CORe50 benchmark in the png format.</i></div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/bbox.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>Bbox.zip</strong>. <i>Bounding boxes for the full-size version in the txt format.</i></div>
+<strong>bbox.zip</strong>. <i>Bounding boxes for the full-size version in the txt format.</i></div>
 </div>
+
+<p>If you are a Python user you can also benefit by our npz version of the dataset <i>core50_imgs.npz</i> accompanied by the <i>paths.pkl</i> file which contains the path corresponding to each image.</p>
+
+			<div class="highlight highlight-Python" style="margin-top:15px">
+			<pre><span class="pl-c"> # loading the npz and picked file</span><br> >>><span class="pl-k"> import</span> numpy <span class="pl-k">as</span> np <br> >>><span class="pl-k"> import</span> pickle <span class="pl-k">as</span> pkl <br> >>> pkl_file <span class="pl-k">= open</span>(<span class="pl-s">'paths.pkl'</span>, <span class="pl-s">'rb'</span>) <br> >>> paths <span class="pl-k">=</span> pkl.load(pkl_file) <br> >>> imgs <span class="pl-k">=</span> np.load(<span class="pl-s">'core50_imgs.npz'</span>)['x'] <br><br><span class="pl-c"> # Files dimensions</span><br> >>><span class="pl-k"> print </span>imgs.shape <br> (164866, 128, 128, 3)<br> >>><span class="pl-k"> print </span>len(paths)<br> 164866 </pre>
+			</div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_imgs.npz"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<strong>core50_imgs.npz</strong>. <i> Np.uint8 PIL images of the entire Cropped_128x128 version of the dataset.</i></div>
+</div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/paths.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<strong>paths.pkl</strong>. <i> Python list of Strings containing the corresponding patch of each image in the core50_imgs.npz file.</i></div>
+</div>
+
 
 <p>In order to better track the moving objects or to further improve the object recognition accuracy, we release also the <strong>depth map</strong> in the same format we have seen before for the colored images:</p>
 
@@ -173,13 +192,13 @@ Color004: 149 159 276 286
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_350x350_depth.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>Full-size_350x350_depth.zip</strong>. <i>Depth map for the full-size version in the png format (grayscale, transparent when the depth information is missing).</i></div>
+<strong>full-size_350x350_depth.zip</strong>. <i>Depth map for the full-size version in the png format (grayscale, transparent when the depth information is missing).</i></div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_128x128_depth.zip""><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>Cropped_128x128_depth.zip</strong>. <i>Depth map for the cropped version in the png format (grayscale, transparent when the depth information is missing).</i></div>
+<strong>cropped_128x128_depth.zip</strong>. <i>Depth map for the cropped version in the png format (grayscale, transparent when the depth information is missing).</i></div>
 </div>
 
 <p>Finally, to make sure everything is there, you can check the exact number of (color + depth) images you're going to find for each object and session: </p>
@@ -187,7 +206,7 @@ Color004: 149 159 276 286
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/dataset_dims.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
-<strong>Dataset_dims.zip</strong>. <i> Exact number of frames for each object and session.</i></div>
+<strong>dataset_dims.zip</strong>. <i> Exact number of frames for each object and session.</i></div>
 </div>
 
 <h3> Configuration Files </h3>
@@ -213,7 +232,7 @@ The filelists directory tree will look like this:</p>
   |--- NIC_cum/
 </code></pre>
 
-So, for each scenario (NI, NC, NIC) we have two different filelists folders depending on the main strategy, cumulative or incremental, with the <i>_cum</i> or <i>_inc</i> suffix respectively. Then, for each of these folders, the configuration files of 10 different runs are reported. For each of these runs a number of <i>"train_batch_XX_filelist.txt"</i> is available along with the <i>"test_filelist.txt"</i>. Each file is formatted in the <a href="https://ceciliavision.wordpress.com/2016/03/08/caffedata-layer/">caffe filelist format</a>. <br><br>Please note that: <strong>(i)</strong> the order <strong> may highly impact</strong> the accuracy in a continuous learning scenario! This is why a multiple runs configuration is needed; <strong>(ii)</strong> the labels are coherent only for each run among the train-test filelists and do not stay necessary the same among the scenarios due to technical implementation details!
+So, for each scenario (NI, NC, NIC) we have two different filelists folders depending on the main strategy, cumulative or incremental, with the <i>_cum</i> or <i>_inc</i> suffix respectively. Then, for each of these folders, the configuration files of 10 different runs are reported. For each of these runs a number of <i>"train_batch_XX_filelist.txt"</i> is available along with the <i>"test_filelist.txt"</i>. Each file is formatted in the <a href="https://ceciliavision.wordpress.com/2016/03/08/caffedata-layer/">caffe filelist format</a>. <br><br>Please note that: <strong>(i)</strong> the order <strong> may highly impact</strong> the accuracy in a continuous learning scenario! This is why a multiple runs configuration is needed; <strong>(ii) the labels are coherent only for each run among the train-test filelists </strong> and do not stay necessary the same among the scenarios due to technical implementation details (we want to label objects dynamically)!
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/batches_filelists.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
@@ -277,13 +296,33 @@ A similar approach can be used with the <i>sequential experiments</i> of <strong
 </div>
 
 <h3> Code and Data Loaders </h3>
-The code for reproducing the experiments in the paper is already available in the master branch of <a href="https://github.com/vlomonaco/core50"> this github repository</a>!<br><br>
+The Python code for reproducing the experiments in the paper is already available in the master branch of <a href="https://github.com/vlomonaco/core50"> this github repository</a>!<br><br>
 
-We have just implemented the <strong>Pytorch Data Loader</strong> (pending <a href='https://github.com/pytorch/vision/pull/340'>Pull Request</a>), you can download <a href='https://github.com/pytorch/vision/pull/340'>here</a> for now and we plan to add in the repository an independent super-fast Python Data-Loader soon... stay tuned!<br><br>
+As you might have noticed, assessing your own CL strategies on CORe50 wouldn't be as simple as loading the npz file since you have to deal with a number of runs and configurations. That's way we also provide a <i>super fast</i> and <i>flexible</i> <strong>Python Data Loader</strong> which can handle that for you. For example: 
+
+			<div class="highlight highlight-Python" style="margin-top:15px">
+			<pre><span class="pl-c"> # importing CORe50</span><br> >>><span class="pl-k"> import</span> CORE50 <br> >>> train_set <span class="pl-k">=</span>(root<span class="pl-k">=</span><span class="pl-s">'/home/admin/Ior50N/128'</span>, cumul<span class="pl-k">=False</span>, run<span class="pl-k">=</span>0)<br><br><span class="pl-c"> # Using the data loader</span><br> >>><span class="pl-k"> for </span>batch<span class="pl-k"> in</span> train_set: <br><span class="pl-c"> ...     # This is the training batch not the mini-batch</span> <br> ...     x, y <span class="pl-k">= </span> batch <br></pre>
+			</div><br>
+
+Take a look at the Python class <a href='https://github.com/vlomonaco/core50/blob/master/scripts/python/data_loader.py'>here</a> for more details. As you can see we thought at two modalities. The first one for small RAM devices where we load the batch imgs <i>on-the-fly</i> as they are needed and the second one in which we preload the entire dataset and we use a <i>Look-UP table</i> to figure out which subset of data we need.<br><br>
+
+if you are a PyTorch user, we have just implemented the <strong>Pytorch Data Loader</strong> (pending <a href='https://github.com/pytorch/vision/pull/340'>Pull Request</a>), you can download <a href='https://github.com/pytorch/vision/pull/340'>here</a> but up to now it has only the "loading on-the-fly" (even if multi-threads) modality.<br><br>
 
 If you want to contribute or you find a bug, please <strong>make a PR</strong> or simply <strong>open an issue</strong> (also questions are welcomed)! We guarantee at least an answer in 48hrs! :-)
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/labels.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<strong>labels.pkl</strong>. <i>Pre-loaded Python dict (pickled) for the labels of each run</i>.</div>
+</div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/LUP.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<strong>LUP.pkl</strong>. <i> Look-UP Table with the patterns order for each run</i>.</div>
+</div>
+
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="https://github.com/vlomonaco/core50/archive/master.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px; margin-left:60px"> 
 <strong>core50-master.zip</strong>. <i> All the code, materials, scripts in order to use/reproduce the benchmark.</i></div>

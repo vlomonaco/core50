@@ -206,7 +206,7 @@ if __name__ == "__main__":
 
     test_set = CORE50(root='/home/admin/Ior50N/128', train=False)
 
-    for batch in enumerate(training_set):
+    for batch in training_set:
         # WARNING this is NOT the mini-batch, but one incremental batch!
         # You can later extract mini-batches for SGD training with python
         # idexing.

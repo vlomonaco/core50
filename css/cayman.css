@@ -215,7 +215,7 @@ a:hover { text-decoration: underline; }
 .keywords thead tr th { 
   font-weight: bold;
   padding: 12px 30px;
-  padding-left: 42px;
+  padding-left: 20px;
 }
 .keywords thead tr th span { 
   padding-right: 20px;

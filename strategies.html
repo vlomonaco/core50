@@ -1,0 +1,213 @@
+---
+layout: default
+title: {{ site.name }}
+---
+
+<div id="home">
+
+<a name="start"></a>
+
+<h1>CL Strategies and Benchmarks</h1>
+
+In this constantly updated page we keep track of the most popular <strong>Continuous Learning</strong> strategies and on what benchmarks they have been assessed.
+
+
+<h3>CL Benchmarks</h3>
+
+Given the novelty of the topic, very few datasets and benchmarks have been specifically designed for assessing CL strategies. Indeed, most of the time they have been assessed on "<i>remixed</i>" version of common ML datasets. 
+
+But before introducing them in more details, it is worth clarifying their broad categorization. <br><br>
+
+Being <strong>X</strong> and <strong>Y</strong>, the <i>Input</i> and <i>Output</i> distribution respectively, as for any ML problem we would like to learn the best mapping through a parametrized function <strong><i>f</i></strong>, such that <i><strong>y</strong> = <strong>f</strong>(<strong>x</strong>; <strong>&Theta;</strong>)</i>. CL benchmark can be essentially divided into four categories <i>based on how the Input and Output distributions change</i> among each incremental batch: <br>
+
+<ul class="posts" style='margin-top:20px'>
+      <li><strong>MXFY</strong>: Modified X</i>, <i>Fixed Y</i></li>
+      <li><strong>MXMY</strong>: <i>Modified X</i>, <i>Modified Y</i></li>
+      <li><strong>NXNY</strong>: <i>New X</i>, <i>New Y</i></li>
+      <li><strong>NXFY</strong>: <span><i>New X</i>, <i>Fixed Y</i></li>
+</ul>
+
+The main difference among the "<i>Modified</i>" and "<i>New</i>" distribution modalities is that in the former we cannot treat the distributions as <i>separated</i> among each incremental batch but we have to consider one big distribution which keeps changing over time. This is import for example for a <strong>multi-class</strong> rather than a <strong>multi-task</strong> setting where at all times we want to distinguish class across a single output distribution (the entire objects space).<br><br>
+
+Let's have a look at each benchmark and in which modality they have been used so far:<br>
+
+<ul class="posts" style='margin-top:20px'>
+      <li><strong>Permuted MNIST</strong> (MXFY) <a href=#ref>[5]</a> </li>
+      <li><strong>MNIST Split</strong> (NXNY) <a href=#ref>[7]</a></li>
+      <li><strong>CIFAR10/100 Split</strong> (NXNY) <a href=#ref>[6]</a></li>
+      <li><strong>ILSVRC2012 Split</strong> (NXMY) <a href=#ref>[6]</a></li>
+      <li><strong>Atari Games</strong> (NXFY) <a href=#ref>[5]</a></li>
+      <li><strong>CORe50</strong> (MXFY, NXMY, MXMY) <a href=#ref>[1]</a></li>
+
+</ul>
+
+<h3>CL Strategies</h3>
+
+While the community has not agreed yet on a shared categorization for CL strategies we think it would be easier to see them as devised in three different groups:<br><br>
+
+<ol class="posts">
+      <li><span><strong>Architectural Strategies</strong></li>
+      <li><span><strong>Functional Strategies</strong></li>
+      <li><span><strong>Rehearsal Strategies</strong></li>
+</ol>
+
+The first one is all about changes in the <i>architecture</i>, the second about changes <i>in the loss function</i> (or the training modalities in general), and the third one is about keeping in memory the smallest amount of information as possible from which <i>rehearsing</i> the model about the past. <br><br>
+
+Most of the strategies do not use just one of those approaches but for simplicity we are going to consider them as belonging to just one group. The most popular strategies for each category are listed below. <br><br>
+
+
+<strong>Architectural Strategies</strong>:<br><br>
+<ul class="posts">
+      <li><span><i>CopyWeights with Re-init</i> (CWR) <a href=#ref>[1]</a></li>
+      <li><span><i>Progressing Neural Networks</i> (PNN) <a href=#ref>[8]</a></li>
+</ul>
+
+<strong>Functional Strategies</strong>:<br><br>
+<ul class="posts">
+      <li><span><i>Elastic Weights Consolidation</i> (EWC) <a href=#ref>[5]</a></li>
+      <li><span><i>Synaptic Intelligence</i> (SynInt) <a href=#ref>[7]</a></li>
+      <li><span><i>Learning without Forgetting</i> (LwF) <a href=#ref>[3]</a></li>
+</ul>
+
+<strong>Rehearsal Strategies</strong>:<br><br>
+<ul class="posts">
+      <li><span><i>Incremental Classifier and Representation Learning</i> (iCaRL) <a href=#ref>[6]</a></li>
+      <li><span><i>Gradient Episodic Memory</i> (GEM) <a href=#ref>[4]</a></li>
+</ul>
+
+<h3>Summary Table</h3>
+
+Here we provide a single table from which it is possible to get on which benchmark each strategy has been assessed and where (It would be unfair to report directly the accuracy results since the community has not agreed on a <strong>"model invariant"</strong> evaluation metric yet): <br><br>
+
+ <div id="wrapper">
+  
+  <table id="keywords" class='keywords' cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>Strategy</th>
+        <th>Perm. MNIST</th>
+        <th>MNIST Split</th>
+        <th>CIFAR Split</th>
+        <th>ILSVRC2012 Split</th>
+        <th>Atari Games</th>
+        <th>CORe50</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lalign"><strong>CWR</strong></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><a href=#ref>[1]</a></td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>PNN</strong></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><a href=#ref>[8]</a></td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>EWC</strong></td>
+        <td><a href=#ref>[5]</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><a href=#ref>[5]</a></td>
+        <td><a href=#ref>[9]</a></td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>SynInt</strong></td>
+        <td><a href=#ref>[7]</a></td>
+        <td><a href=#ref>[7]</a></td>
+        <td><a href=#ref>[7]</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>iCaRL</strong></td>
+        <td>-</td>
+        <td>-</td>
+        <td><a href=#ref>[6]</a></td>
+        <td><a href=#ref>[6]</a></td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>GEM</strong></td>
+        <td><a href=#ref>[4]</a></td>
+        <td>-</td>
+        <td><a href=#ref>[4]</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>LwF</strong></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><a href=#ref>[9]</a></td>
+      </tr>
+    </tbody>
+  </table>
+ </div> 
+
+ <h3>References</h3>
+ <a name="ref"></a>
+  <table id='ref_table' style="width:100%">
+  <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[1]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Vincenzo Lomonaco and Davide Maltoni. <a href="http://proceedings.mlr.press/v78/lomonaco17a.html" target="_blank">"CORe50: a new Dataset and Benchmark for Continuous Object Recognition".</a> Proceedings of the 1st Annual Conference on Robot Learning, PMLR 78:17-26, 2017. </i></th> 
+  </tr>
+    <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[2]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>James Kirkpatrick & All. <a href="http://www.pnas.org/content/114/13/3521.abstract" target="_blank">"Overcoming catastrophic forgetting in neural networks".</a> Proceedings of the National Academy of Sciences, 2017, 201611835. </i></th> 
+  </tr>
+  <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[3]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Li Zhizhong and Derek Hoiem. <a href="http://www.pnas.org/content/114/13/3521.abstract" target="_blank">"Learning without forgetting".</a> European Conference on Computer Vision. Springer International Publishing, 2016. </i></th> 
+  </tr>
+  <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[4]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Lopez-Paz David and Marc'Aurelio Ranzato. <a href="http://papers.nips.cc/paper/7225-gradient-episodic-memory-for-continuum-learning" target="_blank">"Gradient Episodic Memory for Continual Learning".</a> European Conference on Computer Vision. Advances in Neural Information Processing Systems. 2017. </i></th> 
+  </tr>
+  <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[5]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Kirkpatrick James et al. <a href="http://www.pnas.org/content/114/13/3521.abstract">"Overcoming catastrophic forgetting in neural networks."</a> Proceedings of the National Academy of Sciences, 2017</i></th> 
+  </tr>
+  <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[6]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Rebuffi Sylvestre-Alvise, Alexander Kolesnikov and Christoph H. Lampert. <a href='https://arxiv.org/abs/1611.07725'>"iCaRL: Incremental classifier and representation learning."</a> arXiv preprint arXiv:1611.07725, 2016.</i></th> 
+  </tr>
+ <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[7]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Zenke, Friedemann, Ben Poole, and Surya Ganguli. <a href='http://proceedings.mlr.press/v70/zenke17a.html'>"Continual learning through synaptic intelligence". </a> International Conference on Machine Learning. 2017.</i></th> 
+  </tr>
+<tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[8]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Rusu Andrei et al. <a href='https://arxiv.org/abs/1606.04671'>"Progressive neural networks."</a> arXiv preprint arXiv:1606.04671, 2016.</i></th> 
+  </tr>
+<tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[9]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Vincenzo Lomonaco and Davide Maltoni. <a href='https://vlomonaco.github.io/core50/leaderboard'> CORe50 LeaderBoard</a>. Website, 2017.</i></th> 
+  </tr>
+
+</table>

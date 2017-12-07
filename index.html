@@ -245,7 +245,7 @@ So, for each scenario (NI, NC, NIC) we have two different filelists folders depe
 
 <ol class="posts" style='margin-top: 10px'>
       <li></strong>The order <strong> may highly impact</strong> the accuracy in a continuous learning scenario! This is why a multiple runs configuration is needed;</li>
-      <li><strong>For the NC scenario the mappings "object -> label" are different for each run </strong>. That's because some CL strategies prefer labels to be continuous (i.e. if we have 3 objects we want the labels to be exactly 0, 1 and 2)!</li>
+      <li><strong>For the NC scenario the mappings "object -> label" are different for each run </strong>. That's because some CL strategies prefer labels to be continuous for each incremental batch (i.e. if we have 3 objects we want the labels to be exactly 0, 1 and 2)!</li>
 </ol>
 
 Recovering the mapping from the filelists is straightforward but a bit tedious so we have already prepared a Python dict for you (download link below) such that you access the mapping as easy as:

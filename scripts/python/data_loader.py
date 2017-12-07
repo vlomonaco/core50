@@ -125,12 +125,15 @@ class CORE50(object):
             x = self.get_batch_from_paths(paths).astype(np.uint8)
 
         # In either case we have already loaded the y
-        if self.cumul:
-            y = []
-            for i in range(self.batch + 1):
-                y += self.labels[scen][run][i]
+        if self.train:
+            if self.cumul:
+                y = []
+                for i in range(self.batch + 1):
+                    y += self.labels[scen][run][i]
+            else:
+                y = self.labels[scen][run][batch]
         else:
-            y = self.labels[scen][run][batch]
+            y = self.labels[scen][run][-1]
 
         y = np.asarray(y, dtype=np.float32)
 
@@ -202,9 +205,9 @@ class CORE50(object):
 
 if __name__ == "__main__":
 
-    training_set = CORE50(root='/home/admin/Ior50N/128')
+    training_set = CORE50(root='/home/vincenzo/core50_128x128')
 
-    test_set = CORE50(root='/home/admin/Ior50N/128', train=False)
+    test_set = CORE50(root='/home/vincenzo/core50_128x128', train=False)
 
     for batch in training_set:
         # WARNING this is NOT the mini-batch, but one incremental batch!

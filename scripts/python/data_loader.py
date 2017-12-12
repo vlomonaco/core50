@@ -46,9 +46,9 @@ class CORE50(object):
             available training data.
         run (int, optional): One of the 10 runs (from 0 to 9) in which the
             training batch order is changed as in the official benchmark.
-        batch (int, optional): One of the training incremental batches from 0 to
-            max-batch - 1. Remember that for the ``ni``, ``nc`` and ``nic`` we
-            have respectively 8, 9 and 79 incremental batches. If
+        start_batch (int, optional): One of the training incremental batches
+            from 0 to max-batch - 1. Remember that for the ``ni``, ``nc`` and
+            ``nic`` we have respectively 8, 9 and 79 incremental batches. If
             ``train=False`` this parameter will be ignored.
     """
 
@@ -58,23 +58,31 @@ class CORE50(object):
         'nic': 79
     }
 
-    def __init__(self, root='', preload=False, scenario='ni', train=True,
-                 cumul=False, run=0, batch=0):
+    def __init__(self, root='', preload=False, scenario='ni', cumul=False,
+                 run=0, start_batch=0):
         """" Initialize Object """
 
         self.root = os.path.expanduser(root)
         self.preload = preload
-        self.train = train
         self.scenario = scenario
         self.cumul = cumul
         self.run = run
-        self.batch = batch
+        self.batch = start_batch
 
         if preload:
             print("Loading data...")
-            with open(os.path.join(root, 'core50_imgs.npz'), 'rb') as f:
-                npzfile = np.load(f)
-                self.x = npzfile['x']
+            bin_path = os.path.join(root, 'core50_imgs.bin')
+            if os.path.exists(bin_path):
+                with open(bin_path, 'rb') as f:
+                    self.x = np.fromfile(f, dtype=np.uint8) \
+                        .reshape(164866, 128, 128, 3)
+
+            else:
+                with open(os.path.join(root, 'core50_imgs.npz'), 'rb') as f:
+                    npzfile = np.load(f)
+                    self.x = npzfile['x']
+                    print("Writing bin for fast reloading...")
+                    self.x.tofile(bin_path)
 
         print("Loading paths...")
         with open(os.path.join(root, 'paths.pkl'), 'rb') as f:
@@ -103,44 +111,64 @@ class CORE50(object):
             raise StopIteration
 
         # Getting the right indexis
-        if self.train:
-            if self.cumul:
-                idx_list = []
-                for i in range(self.batch + 1):
-                    idx_list += self.LUP[scen][run][i]
-            else:
-                idx_list = self.LUP[scen][run][batch]
+        if self.cumul:
+            train_idx_list = []
+            for i in range(self.batch + 1):
+                train_idx_list += self.LUP[scen][run][i]
         else:
-            idx_list = self.LUP[scen][run][-1]
+            train_idx_list = self.LUP[scen][run][batch]
 
         # loading data
         if self.preload:
-            x = np.take(self.x, idx_list)
+            train_x = np.take(self.x, train_idx_list, axis=0)\
+                      .astype(np.float32)
         else:
+            print("Loading data...")
             # Getting the actual paths
-            paths = []
-            for idx in idx_list:
-                paths.append(os.path.join(self.root, self.paths[idx]))
-
-            x = self.get_batch_from_paths(paths).astype(np.uint8)
+            train_paths = []
+            for idx in train_idx_list:
+                train_paths.append(os.path.join(self.root, self.paths[idx]))
+            # loading imgs
+            train_x = self.get_batch_from_paths(train_paths).astype(np.float32)
 
         # In either case we have already loaded the y
-        if self.train:
-            if self.cumul:
-                y = []
-                for i in range(self.batch + 1):
-                    y += self.labels[scen][run][i]
-            else:
-                y = self.labels[scen][run][batch]
+        if self.cumul:
+            train_y = []
+            for i in range(self.batch + 1):
+                train_y += self.labels[scen][run][i]
         else:
-            y = self.labels[scen][run][-1]
+            train_y = self.labels[scen][run][batch]
 
-        y = np.asarray(y, dtype=np.float32)
+        train_y = np.asarray(train_y, dtype=np.float32)
 
         # Update state for next iter
         self.batch += 1
 
-        return x, y
+        return (train_x, train_y)
+
+    def get_test_set(self):
+        """ Return the test set (the same for each inc. batch). """
+
+        scen = self.scenario
+        run = self.run
+
+        test_idx_list = self.LUP[scen][run][-1]
+
+        if self.preload:
+            test_x = np.take(self.x, test_idx_list, axis=0).astype(np.float32)
+        else:
+            # test paths
+            test_paths = []
+            for idx in test_idx_list:
+                test_paths.append(os.path.join(self.root, self.paths[idx]))
+
+            # test imgs
+            test_x = self.get_batch_from_paths(test_paths).astype(np.float32)
+
+        test_y = self.labels[scen][run][-1]
+        test_y = np.asarray(test_y, dtype=np.float32)
+
+        return test_x, test_y
 
     next = __next__  # python2.x compatibility.
 
@@ -187,16 +215,18 @@ class CORE50(object):
             for i, path in enumerate(paths):
                 if verbose:
                     print("\r" + path + " processed: " + str(i + 1), end='')
-                    x[i] = np.array(Image.open(path))
-                if verbose:
-                    print()
-                if not on_the_fly:
-                    # Then we save x
-                    if compress:
-                        with open(file_path, 'wb') as g:
-                            np.savez_compressed(g, x=x)
-                    else:
-                        x.tofile(snap_dir + hexdigest + "_x.bin")
+                x[i] = np.array(Image.open(path))
+
+            if verbose:
+                print()
+
+            if not on_the_fly:
+                # Then we save x
+                if compress:
+                    with open(file_path, 'wb') as g:
+                        np.savez_compressed(g, x=x)
+                else:
+                    x.tofile(snap_dir + hexdigest + "_x.bin")
 
         assert (x is not None), 'Problems loading data. x is None!'
 
@@ -205,15 +235,17 @@ class CORE50(object):
 
 if __name__ == "__main__":
 
-    training_set = CORE50(root='/home/vincenzo/core50_128x128')
+    # Create the dataset object
+    dataset = CORE50(root='~/core50_128x128')
 
-    test_set = CORE50(root='/home/vincenzo/core50_128x128', train=False)
+    # Get the fixed test set
+    test_x, test_y = dataset.get_test_set()
 
-    for batch in training_set:
-        # WARNING this is NOT the mini-batch, but one incremental batch!
-        # You can later extract mini-batches for SGD training with python
-        # idexing.
-        x, y = batch
+    # loop over the training incremental batches
+    for train_batch in dataset:
+        # WARNING train_batch is NOT a mini-batch, but one incremental batch!
+        # You can later train with SGD indexing train_x and train_y properly.
+        train_x, train_y = train_batch
 
         # do your computation here...
 

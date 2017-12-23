@@ -1,0 +1,154 @@
+---
+layout: default
+title: {{ site.name }}
+---
+
+<div id="home">
+
+<a name="start"></a>
+
+<h1>Continuous Learning Benchmarks</h1>
+
+In this constantly updated page we keep track and categorize the most popular <strong>benchmarks</strong> for <strong>Continuous Learning</strong> (CL).<br><br>
+
+Given the novelty of the topic, very few benchmarks has been specifically designed for assessing CL strategies. Much of them are based on "<i>remixed</i>" versions of common vision datasets such as <strong>CIFAR</strong> or <strong>MNIST</strong> and are not completely coherent among each others. To make things clearer here we propose a broad categorization of these benchmarks in two modalities we denote as <strong>Multi-Task</strong> (MT) and <strong> Single-Incremental-Task </strong> (SIT).  
+
+<h3>Multi-Task vs Single-Incremental-Task</h3>
+
+Most of Continuous Learning studies focus on a <strong>Multi-Task</strong> scenario, where the same model is required to learn incrementally a number of <strong>isolated</strong> tasks without forgetting the previous ones.<br><br>
+
+For example in <a href=#ref>[5]</a>, <strong>MINIST</strong> is split in 5 isolated tasks, where each task consists in learning two classes (i.e. two digits). There is no class overlapping in different tasks, and accuracy is computed separately for each task. Average accuracy over tasks is also reported (see <strong>Fig. 1</strong>). <br><br>
+
+<div style="text-align: center">
+<img src="imgs/mnist_split.png" alt="mnist_split" style="width:90%; margin-top:10px;">
+<p style="margin-top:-5px;"><strong>Fig. 1</strong>: <i> The first 5 graphs show the accuracy on each task as new task are learned. The blue curve (simple tuning) denotes high forgetting, while green curve (Synaptic Intelligence approach) is much better. The last graph on the right is the average accuracy over the tasks already encountered <a href=#ref>[5]</a></i>. </p>
+</div><br>
+
+A still largely unexplored scenario, hereafter denoted as <strong>Single-Incremental-Task</strong> is addressed in <a href=#ref>[1]</a> and <a href=#ref>[4]</a> (in particular <a href=#ref>[4]</a> refers to this approach as class-incremental). This scenario considers a single task which is incremental in nature. In other words, we still add new classes sequentially but the classification problem is unique and when computing accuracy we need to distinguish among all the classes encountered so far.<br><br>
+This is quite common in <strong>natural learning</strong>, for example in object recognition: as a child learn to recognize new objects, they need to be discriminated w.r.t. the whole set of already known objects (i.e., visual recognition tasks are rarely isolated in nature!). It is worth noting that single-incremental-task scenario is <strong>much more difficult</strong> than the multi-task one. In fact:<br>
+
+<ul class="posts" style='margin-top:20px'>
+      <li>We still have to deal with <i>Catastrophic Forgetting</i>.</li>
+      <li>We need to learn to discriminate classes that typically we never see together (e.g. in the same batch), except when a memory buffer is used to store/replay a fraction of past data.</li>
+</ul>
+
+For example, <strong>Fig. 2</strong> reports accuracy on single-incremental-task CIFAR-100 scenario while <strong>Fig. 3</strong> shows accuracy on multi-task scenario for a similar setup. Although results are not directly comparable (i.e. the model and training are different) the resulting accuracy for finetuning strategy varies from about <i>20 to 60%</i>.
+
+<div style="text-align: center">
+<img src="imgs/cifar100_split.png" alt="cifar100_split" style="width:70%; margin-top:20px;">
+<p style="margin-top:-5px;"><strong>Fig. 2</strong>: <i>The graph shows the accuracy on CIFAR-100 with 10 classes per batch in the single-incremental-task scenario. Note that after 5 batches (number of classes 50) finetuning accuracy is about 20% <a href=#ref>[4]</a></i>. </p>
+</div>
+
+<div style="text-align: center">
+<img src="imgs/cifar10-100_split.png" alt="cifar10-100_split" style="width:60%; margin-top:20px;">
+<p style="margin-top:-5px;"><strong>Fig. 3</strong>: <i>The graph shows the accuracy on CIFAR-10/100 with 10 classes per batch in the multi-task scenario. The columns denote the accuracy on single tasks at the end of training. Here average finetuning accuracy is about 60%. Consolidation refers to synaptic intelligence approach <a href=#ref>[5]</a></i>. </p>
+</div>
+
+<h3>Not only New Classes</h3>
+
+Almost all continuous learning benchmarks focuses on <strong>New Classes</strong> (NC) scenario, where the new training batches consists of pattern of new classes. In <a href=#ref>[1]</a> we proposed three continuous learning scenarios:<br>
+
+<ul class="posts" style='margin-top:20px'>
+      <li style="margin-bottom: 10px"><strong>New Instances (NI)</strong>: new training patterns of the same classes becomes available in subsequent batches with new poses and environment conditions (illuminations, background, occlusions, etc..). A good model is expected to incrementally consolidate its knowledge about the known classes without compromising what it learned before.</li>
+      <li style="margin-bottom: 10px"><strong>New Classes (NC)</strong>: new training patterns belonging to different classes becomes available in subsequent batches. In this case the model should be able to deal with the new classes without losing accuracy on the previous ones.</li>
+      <li><strong>New Instances and Classes (NIC)</strong>: new training patterns belonging both to known and new classes becomes available in subsequent training batches. A good model is expected to consolidate its knowledge about the known classes and to learn the new ones.</li>
+</ul><br>
+
+Almost all studies published so far consider NC scenario only. Some exceptions are:<br>
+
+<ul class="posts" style='margin-top:20px'>
+      <li style="margin-bottom: 10px"><strong>CORe50</strong> <a href=#ref>[1]</a>: NI, NC and NIC in single-incremental-task mode. </li>
+      <li style="margin-bottom: 10px"><strong>Permuted/Rotated MNIST</strong> <a href=#ref>[2]</a><a href=#ref>[3]</a>: classes are the same but the input representation is changed for each task (pixel permutation or rotations). Tasks are here isolated too, so we are still in a multi-task modality.</li>
+      <li><strong>Atari Games</strong> <a href=#ref>[4]</a>: this is an interesting setup for Continuous Reinforcement Learning. While tasks are kept isolated (multi-task mode), task learning is interleaved (similar to NIC scenario in CORe50) and task identification is not explicitly provided (unsupervised). </li>
+</ul>
+
+To sum up, here we propose a constantly updated <strong>table summary</strong> of the most popular Continuous Learning benchmarks and on which modality they have been used so far:<br><br>
+
+<div id="wrapper">
+  
+  <table id="centered" class='keywords' cellspacing="0" cellpadding="0"">
+    <thead>
+      <tr>
+        <th>Benchmark</th>
+        <th>Multi-Task</th>
+        <th>Single-Incremental-Task</th>
+        <th>Used in</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lalign"><strong>Permuted MNIST</strong></td>
+        <td>yes</td>
+        <td>no</td>
+        <td><a href=#ref>[2]</a><a href=#ref>[3]</a><a href=#ref>[5]</a></td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>Rotated MNIST</strong></td>
+        <td>yes</td>
+        <td>no</td>
+        <td><a href=#ref>[3]</a></td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>MNIST Split</strong></td>
+        <td>yes</td>
+        <td>no</td>
+        <td><a href=#ref>[5]</a></td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>CIFAR10/100 Split</strong></td>
+        <td>yes</td>
+        <td>yes</td>
+        <td><a href=#ref>[3]</a><a href=#ref>[4]</a><a href=#ref>[5]</a></td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>ILSVRC2012 Split</strong></td>
+        <td>no</td>
+        <td>yes</td>
+        <td><a href=#ref>[4]</a></td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>Atari Games</strong></td>
+        <td>yes</td>
+        <td>no</td>
+        <td><a href=#ref>[2]</a></td>
+      </tr>
+      <tr>
+        <td class="lalign"><strong>CORe50</strong></td>
+        <td>no</td>
+        <td>yes</td>
+        <td><a href=#ref>[1]</a></td>
+      </tr>
+    </tbody>
+  </table>
+ </div> 
+
+ <h3>References</h3>
+ <a name="ref"></a>
+  <table id='ref_table' style="width:100%">
+  <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[1]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Vincenzo Lomonaco and Davide Maltoni. <a href="http://proceedings.mlr.press/v78/lomonaco17a.html" target="_blank">"CORe50: a new Dataset and Benchmark for Continuous Object Recognition".</a> Proceedings of the 1st Annual Conference on Robot Learning, PMLR 78:17-26, 2017. </i></th> 
+  </tr>
+    <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[2]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>James Kirkpatrick & All. <a href="http://www.pnas.org/content/114/13/3521.abstract" target="_blank">"Overcoming catastrophic forgetting in neural networks".</a> Proceedings of the National Academy of Sciences, 2017, 201611835. </i></th> 
+  </tr>
+  <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[3]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Lopez-Paz David and Marc'Aurelio Ranzato. <a href="http://papers.nips.cc/paper/7225-gradient-episodic-memory-for-continuum-learning" target="_blank">"Gradient Episodic Memory for Continual Learning".</a> European Conference on Computer Vision. Advances in Neural Information Processing Systems. 2017. </i></th> 
+  </tr>
+  <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[4]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Rebuffi Sylvestre-Alvise, Alexander Kolesnikov and Christoph H. Lampert. <a href='https://arxiv.org/abs/1611.07725'>"iCaRL: Incremental classifier and representation learning."</a> arXiv preprint arXiv:1611.07725, 2016.</i></th> 
+  </tr>
+ <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[5]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Zenke, Friedemann, Ben Poole, and Surya Ganguli. <a href='http://proceedings.mlr.press/v70/zenke17a.html'>"Continual learning through synaptic intelligence". </a> International Conference on Machine Learning. 2017.</i></th> 
+  </tr>
+
+</table>

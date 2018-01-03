@@ -9,36 +9,32 @@ title: {{ site.name }}
 
 <h1>Continuous Learning Strategies</h1>
 
-While the community has not agreed yet on a shared categorization for CL strategies, here we propose a three-label categorization based on [7] and [10]: <br><br>
+While the community has not agreed yet on a shared categorization for CL strategies, here we propose a <i>three-label fuzzy categorization</i> based on <a href=#ref>[7]</a> and <a href=#ref>[10]</a>: <br><br>
 
 <ol class="posts">
-      <li><strong>Architectural Strategies</strong>: specific architectures, layers, activation functions, and/or weight-freezing strategies are used to mitigate forgetting. Includes Dual-memories-models attempting to imitate Hippocampus – Cortex duality. </li>
-      <li><strong>Regularization Strategies</strong>: the loss function is extended with terms promoting selective consolidation of the weights which are important to retain past memories. Include regularization techniques such as weight sparsification, dropout, early stopping.</li>
-      <li><strong>Rehearsal Strategies</strong>: past information is periodically replayed to the model, to strengthen connections for memories it has already learned. A simple approach is storing part of the previous training data and interleaving them with new patterns for future training. A more challenging approach is pseudo-reharshal with generative models. </li>
+      <li style="margin-bottom: 10px"><strong>Architectural Strategies</strong>: specific architectures, layers, activation functions, and/or weight-freezing strategies are used to mitigate forgetting. Includes Dual-memories-models attempting to imitate Hippocampus – Cortex duality. </li>
+      <li style="margin-bottom: 10px"><strong>Regularization Strategies</strong>: the loss function is extended with terms promoting selective consolidation of the weights which are important to retain past memories. Include regularization techniques such as weight sparsification, dropout, early stopping.</li>
+      <li style="margin-bottom: 30px"><strong>Rehearsal Strategies</strong>: past information is periodically replayed to the model, to strengthen connections for memories it has already learned. A simple approach is storing part of the previous training data and interleaving them with new patterns for future training. A more challenging approach is pseudo-rehearsal with generative models. </li>
 </ol>
 
-Most of the strategies do not use just one of those approaches but for simplicity we are going to consider them as belonging to just one group. The most popular strategies for each category are listed below. <br><br>
+In the last few years, a large number of CL strategies has been proposed. A <i>non-comprehensive</i>, <i>cherry-picked</i> list of the most popular strategies can be found below:<br><br>
 
-
-<strong>Architectural Strategies</strong>:<br><br>
 <ul class="posts">
-      <li><span><i>CopyWeights with Re-init</i> (CWR) <a href=#ref>[1]</a></li>
-      <li><span><i>Progressing Neural Networks</i> (PNN) <a href=#ref>[8]</a></li>
+      <li><span><i>CopyWeights with Re-init</i> (<strong>CWR</strong>) <a href=#ref>[1]</a></li>
+      <li><span><i>Progressing Neural Networks</i> (<strong>PNN</strong>) <a href=#ref>[8]</a></li>
+      <li><span><i>Elastic Weights Consolidation</i> (<strong>EWC</strong>) <a href=#ref>[5]</a></li>
+      <li><span><i>Synaptic Intelligence</i> (<strong>SynInt</strong>) <a href=#ref>[7]</a></li>
+      <li><span><i>Learning without Forgetting</i> (<strong>LwF</strong>) <a href=#ref>[3]</a></li>
+      <li><span><i>Incremental Classifier and Representation Learning</i> (<strong>iCaRL</strong>) <a href=#ref>[6]</a></li>
+      <li style="margin-bottom: 30px"><span><i>Gradient Episodic Memory</i> (<strong>GEM</strong>) <a href=#ref>[4]</a></li>
 </ul>
 
-<strong>Regularization Strategies</strong>:<br><br>
-<ul class="posts">
-      <li><span><i>Elastic Weights Consolidation</i> (EWC) <a href=#ref>[5]</a></li>
-      <li><span><i>Synaptic Intelligence</i> (SynInt) <a href=#ref>[7]</a></li>
-      <li><span><i>Learning without Forgetting</i> (LwF) <a href=#ref>[3]</a></li>
-</ul>
+In <strong>Fig. 1</strong> the <i>Venn diagram</i> of the fuzzy classification of the aforementioned strategies is proposed. It is interesting to note the large space for yet-to-be-explored techniques merging the ideas of the three different categories.
 
-<strong>Rehearsal Strategies</strong>:<br><br>
-<ul class="posts">
-      <li><span><i>Incremental Classifier and Representation Learning</i> (iCaRL) <a href=#ref>[6]</a></li>
-      <li><span><i>Gradient Episodic Memory</i> (GEM) <a href=#ref>[4]</a></li>
-      <li>SOM-STM ??? da capire meglio [10]</li>
-</ul>
+<div style="text-align: center">
+<img src="imgs/venn_strategies.png" alt="venn_strategies" style="width:80%; margin-top:20px;">
+<p style="margin-top:-5px;"><strong>Fig. 1</strong>: <i>  Venn diagram of the most popular CL strategies, devided in Architectural, Regularization and Rehearsal strategies</i>. </p>
+</div>
 
 <h3>Summary Table</h3>
 
@@ -126,6 +122,10 @@ Here we provide a single table from which it is possible to get on which benchma
   </table>
  </div> 
 
+  If you want to learn more about the most common <i>CL Benchmarks</i> check out our constantly updated page: <a href="benchmarks.html#start">"Continuous Learning Benchmarks"</a>. 
+
+  For more detailed accuracy results on <strong>CORe50</strong>, you can instead take a look at our <a href="leaderboard.html#start">living leaderboard</a>!
+
  <h3>References</h3>
  <a name="ref"></a>
   <table id='ref_table' style="width:100%">
@@ -173,6 +173,12 @@ Here we provide a single table from which it is possible to get on which benchma
     <th style='font-weight: normal; border: 0px; text-align: left;
     vertical-align: top;'>[9]</th>
     <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Vincenzo Lomonaco and Davide Maltoni. <a href='https://vlomonaco.github.io/core50/leaderboard'> CORe50 LeaderBoard</a>. Website, 2017.</i></th> 
-  </tr>
+ </tr>
+
+ <tr>
+    <th style='font-weight: normal; border: 0px; text-align: left;
+    vertical-align: top;'>[10]</th>
+    <th style='font-weight: normal; border: 0px; text-align: left; padding-left:3px'><i>Kemker Ronald et al. <a href='https://arxiv.org/abs/1708.02072'>"Measuring Catastrophic Forgetting in Neural Networks."</a> arXiv preprint arXiv:1708.02072 (2017).</i></th> 
+ </tr>
 
 </table>

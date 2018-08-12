@@ -7,7 +7,7 @@
 [![built with Caffe](https://img.shields.io/badge/build%20with-caffe-brightgreen.svg)](http://caffe.berkeleyvision.org/)
 [![built with Sacred](https://img.shields.io/badge/build%20with-sacred-yellow.svg)](https://github.com/IDSIA/sacred)
 
-## A new Dataset and Benchmark for Continuous Object Recognition
+## A new Dataset and Benchmark for Continuous Learning and Object Recognition
 
 ----------------------------------------------
 

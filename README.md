@@ -17,7 +17,7 @@
 - [x] CORe50 benchmark configuration files
 - [x] Easy-to-access results data and batches configurations
 - [x] Easy-setup, getting started and Python data loader
-- [ ] **Reproducibility tests** (in progress...)
+- [ ] **New realease and additional baselines** (in progress...)
 
 In this page we provide the code and all the materials related to the **CORe50** 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please **cite our [latest paper](https://arxiv.org/abs/1705.03550)**: 

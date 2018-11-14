@@ -16,7 +16,7 @@ In this page we provide a new dataset and benchmark <strong>CORe50</strong>, spe
 If you plan to use this dataset or other resources you'll find in this page, <strong> please cite our latest paper</strong>: </p>
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/pdf_download.png" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-left:60px"> 
+<div style="margin-left:60px">
 <i> Vincenzo Lomonaco and Davide Maltoni. <a href="http://proceedings.mlr.press/v78/lomonaco17a.html" target="_blank">"CORe50: a new Dataset and Benchmark for Continuous Object Recognition".</a> Proceedings of the 1st Annual Conference on Robot Learning, PMLR 78:17-26, 2017. </i>`</div>
 </div>
 
@@ -38,9 +38,9 @@ In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in 
 </p>
 	<a name="benchmark"></a>
   <h1>Benchmark</h1>
-			Popular datasets such as <i>ImageNet</i> and <i>Pascal VOC</i>, provide a very good playground for classification and detection approaches. However, they have been designed with “static” evaluation protocols in mind; the entire dataset is split in just two parts: a training set is used for (one-shot) learning and a separate test set is used for accuracy evaluation. 
+			Popular datasets such as <i>ImageNet</i> and <i>Pascal VOC</i>, provide a very good playground for classification and detection approaches. However, they have been designed with “static” evaluation protocols in mind; the entire dataset is split in just two parts: a training set is used for (one-shot) learning and a separate test set is used for accuracy evaluation.
 
-<br><br><strong>Splitting the training set into a number of batches is essential</strong> to train and test continuous learning approaches, a hot research topic that is currently receiving much attention. Unfortunately, most of the existing datasets are not well suited to this purpose because they lack a fundamental ingredient: the presence of multiple (unconstrained) views of the same objects taken in different sessions (varying background, lighting, pose, occlusions, etc.). 
+<br><br><strong>Splitting the training set into a number of batches is essential</strong> to train and test continuous learning approaches, a hot research topic that is currently receiving much attention. Unfortunately, most of the existing datasets are not well suited to this purpose because they lack a fundamental ingredient: the presence of multiple (unconstrained) views of the same objects taken in different sessions (varying background, lighting, pose, occlusions, etc.).
 			Focusing on Object Recognition we consider three continuous learning scenarios:<br><br>
 <ul class="posts">
 			<li><span><strong>New Instances (NI)</strong>: new training patterns of the same classes becomes available in subsequent batches with new poses and environment conditions (illuminations, background, occlusions, etc..). A good model is expected to incrementally consolidate its knowledge about the known classes without compromising what it learned before.</li><br>
@@ -93,7 +93,7 @@ Please also note that we decided for simplicity to <strong>keep the test set fix
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/core50_class_names.txt"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>core50_class_names.txt</strong>. <i> Ordered list of CORe50 class names. </i></div>
 </div>
 
@@ -104,7 +104,7 @@ Please also note that we decided for simplicity to <strong>keep the test set fix
   |    |------ o1/
   |    |       |---- C_01_01_XXX.png
   |    |       |---- ...
-  |    | 
+  |    |
   |    |------ o2/
   |    |------ ...
   |    |------ o50/
@@ -129,19 +129,19 @@ Color004: 149 159 276 286
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_350x350.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>full-size_350x350_images.zip</strong>. <i> 350 x 350 images before tracking in the png format.</i></div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_128x128.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>cropped_128x128_images.zip</strong>. <i> 128 x 128 images used for the CORe50 benchmark in the png format.</i></div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/bbox.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>bbox.zip</strong>. <i>Bounding boxes for the full-size version in the txt format.</i></div>
 </div>
 
@@ -153,13 +153,13 @@ Color004: 149 159 276 286
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_imgs.npz"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>core50_imgs.npz</strong>. <i> Np.uint8 PIL images of the entire Cropped_128x128 version of the dataset.</i></div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/paths.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>paths.pkl</strong>. <i> Python list of Strings containing the corresponding patch of each image in the core50_imgs.npz file.</i></div>
 </div>
 
@@ -172,7 +172,7 @@ Color004: 149 159 276 286
   |    |------ o1/
   |    |       |---- D_01_01_XXX.png
   |    |       |---- ...
-  |    | 
+  |    |
   |    |------ o2/
   |    |------ ...
   |    |------ o50/
@@ -195,13 +195,13 @@ Color004: 149 159 276 286
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_350x350_depth.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>full-size_350x350_depth.zip</strong>. <i>Depth map for the full-size version in the png format (grayscale, transparent when the depth information is missing).</i></div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_128x128_depth.zip""><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>cropped_128x128_depth.zip</strong>. <i>Depth map for the cropped version in the png format (grayscale, transparent when the depth information is missing).</i></div>
 </div>
 
@@ -209,9 +209,51 @@ Color004: 149 159 276 286
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/dataset_dims.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>dataset_dims.zip</strong>. <i> Exact number of frames for each object and session.</i></div>
 </div>
+
+<h3> Object Detection </h3>
+<p>CORe50 can even be used for Object Detection. In this scenario, we have already provided Tensorflow records for setting up the training pipeline:</p>
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_train.record"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
+<strong>core50_train.record</strong>. <i> Training set for TF object detection.</i></div>
+</div>
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_test.record"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
+<strong>core50_test.record</strong>. <i> Test set for TF object detection.</i></div>
+</div>
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="/data/core50_label_map.pbtxt"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
+<strong>core50_label_map.pbtxt</strong>. <i> Label map.</i></div>
+</div>
+<p>Given these 3 files, it is possible to set up a training pipeline according to the <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/configuring_jobs.md"><strong>Tensorflow Object Detection APIs</strong></a>.</p>
+
+<p>Some visual results are shown in <strong>figure 4</strong>:</p>
+
+<div style="text-align: center">
+<img src="imgs/detection1.jpg" alt="core50 for object detection" style="width:30%; margin-top:10px;    background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;">
+<img src="imgs/detection2.jpg" alt="core50 for object detection" style="width:30%; margin-top:10px;">
+<img src="imgs/detection3.jpg" alt="core50 for object detection" style="width:30%; margin-top:10px;">
+<p><strong>Fig. 4</strong> <i>Example of Object Detection using CORe50 as dataset.</i> </p>
+</div><br>
+<p>However, if you wish to use another framework you can use comma separated files (.csv) that contains labels, id and bounding boxes for each image.</p>
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="/data/core50_train.csv"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
+<strong>core50_train.csv</strong>. <i> Training set.</i></div>
+</div>
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
+<div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="/data/core50_test.csv"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
+<strong>core50_test.csv</strong>. <i> Test set.</i></div>
+</div>
+
 
 <h3> Configuration Files </h3>
 <p>Do you wanna use a different DL framework or programming language but still being able to compare your results with our benchmark? Well that's easy! Just <strong>download the batches filelists for each experiment</strong> in plain .txt format!
@@ -224,7 +266,7 @@ The filelists directory tree will look like this:</p>
   |       |         |------ train_batch_01_filelist.txt
   |       |         |------ ...
   |       |         |------ test_filelist.txt
-  |       |         
+  |       |
   |       |------ Run1/
   |       |------ ...
   |       |------ Run9/
@@ -253,13 +295,13 @@ Recovering the mapping from the filelists is straightforward but a bit tedious s
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/batches_filelists.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>batches_filelists.zip</strong>. <i>Plain text filelists for each experiment and run</i>.</div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/labels2names.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>labels2names.pkl</strong>. <i>Python dict with the "label->object" mapping for each scenario</i>.</div>
 </div>
 
@@ -297,31 +339,31 @@ A similar approach can be used with the <i>sequential experiments</i> of <strong
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/results_tsv.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>tsv_results.zip</strong>. <i> Tab-separated-values results for each scenario</i>.</div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/results.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>results.pkl</strong>. <i>Pre-loaded Python dict (pickled)</i>.</div>
 </div>
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/seq.tsv"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>seq.tsv</strong>. <i> Tab-separated-values results for the sequential experiments</i>.</div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/seq_results.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>seq_results.pkl</strong>. <i>Pre-loaded Python dict (pickled) for the sequential experiments</i>.</div>
 </div>
 
 <h3> Code and Data Loaders </h3>
 The Python code for reproducing the experiments in the paper is already available in the master branch of <a href="https://github.com/vlomonaco/core50"> this github repository</a>!<br><br>
 
-As you might have noticed, assessing your own CL strategies on CORe50 wouldn't be as simple as loading the npz file since you have to deal with a number of runs and configurations. That's way we also provide a <i>super fast</i> and <i>flexible</i> <strong>Python Data Loader</strong> which can handle that for you. For example: 
+As you might have noticed, assessing your own CL strategies on CORe50 wouldn't be as simple as loading the npz file since you have to deal with a number of runs and configurations. That's way we also provide a <i>super fast</i> and <i>flexible</i> <strong>Python Data Loader</strong> which can handle that for you. For example:
 
 			<div class="highlight highlight-Python" style="margin-top:15px">
 			<pre><span class="pl-c"> # importing CORe50</span><br> >>><span class="pl-k"> import</span> data_loader <br> >>> train_set <span class="pl-k">=</span> data_loader.CORE50(root<span class="pl-k">=</span><span class="pl-s">'/home/admin/core50_128x128'</span>, cumul<span class="pl-k">=False</span>, run<span class="pl-k">=</span>0)<br><br><span class="pl-c"> # Using the data loader</span><br> >>><span class="pl-k"> for </span>batch<span class="pl-k"> in</span> train_set: <br><span class="pl-c"> ...     # This is the training batch not the mini-batch</span> <br> ...     x, y <span class="pl-k">= </span> batch <br></pre>
@@ -335,19 +377,19 @@ If you want to contribute or you find a bug, please <strong>make a PR</strong> o
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/labels.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>labels.pkl</strong>. <i>Pre-loaded Python dict (pickled) for the labels of each run</i>.</div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="data/LUP.pkl"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px;margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>LUP.pkl</strong>. <i> Look-UP Table with the patterns order for each run</i>.</div>
 </div>
 
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:10px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="https://github.com/vlomonaco/core50/archive/master.zip"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
-<div style="margin-top:10px; margin-bottom:10px; margin-left:60px"> 
+<div style="margin-top:10px; margin-bottom:10px; margin-left:60px">
 <strong>core50-master.zip</strong>. <i> All the code, materials, scripts in order to use/reproduce the benchmark.</i></div>
 </div>
 
@@ -359,7 +401,7 @@ If you want to contribute or you find a bug, please <strong>make a PR</strong> o
  		<li><span><a href="http://bias.csr.unibo.it/maltoni/main.htm"> Davide Maltoni</a> &#8226; <i>Professor</i></li>
  		<li><span><a href="https://www.linkedin.com/in/riccardo-monica-2577a1123/"> Riccardo Monica </a> &#8226; <i>Master Student</i></li>
 		<li><span><a href="https://www.linkedin.com/in/martin-cimmino-23a87086/"> Martin Cimmino</a> &#8226; <i>Master Student</i></li>
+		<li><span><a href="https://www.linkedin.com/in/giacomobartolism/"> Giacomo Bartoli</a> &#8226; <i>Master Student</i></li>
   </ul>
 
 	<br>For further inquiries you are free to contact <strong>Vincenzo Lomonaco</strong> through his email: <i>vincenzo.lomonaco@unibo.it</i>
-

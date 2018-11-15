@@ -242,7 +242,7 @@ Color004: 149 159 276 286
 <img src="imgs/detection3.jpg" alt="core50 for object detection" style="width:30%; margin-top:10px;">
 <p><strong>Fig. 4</strong> <i>Example of Object Detection using CORe50 as dataset.</i> </p>
 </div><br>
-<p>However, if you wish to use another framework you can use comma separated files (.csv) that contains labels, id and bounding boxes for each image.</p>
+<p>However, if you wish to use another framework you can use comma separated files (.csv) that contain labels, id and bounding boxes for each image.</p>
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="/data/core50_train.csv"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
@@ -253,6 +253,8 @@ Color004: 149 159 276 286
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>core50_test.csv</strong>. <i> Test set.</i></div>
 </div>
+<br>
+We tested object detection using a pre-trained <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md">SSD_MobileNet_v1</a> on COCO dataset and <strong>fine-tuning the last layers on CORe50</strong>. Performances stabilize around 20k and 30k iterations, with an accuracy up to <strong>70%</strong> mAP. Further details are available on this <a href="https://github.com/giacomobartoli/vision-kit/tree/master/core50_utils">repository</a>.
 
 
 <h3> Configuration Files </h3>

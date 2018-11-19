@@ -257,7 +257,7 @@ Color004: 149 159 276 286
 We tested object detection using a pre-trained <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md">SSD_MobileNet_v1</a> on COCO dataset and <strong>fine-tuning the last layers on CORe50</strong>. Performances stabilize around 20k and 30k iterations, with an accuracy up to <strong>70%</strong> mAP. Further details are available on this <a href="https://github.com/giacomobartoli/vision-kit/tree/master/core50_utils">repository</a>.
 
 <h3> Object Segmentation </h3>
-<p align="justify">It is possible to exploit depth information to segment CORe50 objects. First, we created an algorithm that, given an image, discards all pixels belonging to the background. After that, we trained a SVM classifier to identify hand holding pixels. By deleting the background and the holding hand, what we got is the segmentation of the original object.</p>
+<p align="justify">It is possible to exploit depth information to segment CORe50 objects. First, we created an algorithm that, given an image, discards all pixels belonging to the background. After that, we trained a SVM classifier to identify hand holding pixels. By deleting the background and the hand holding, what we got is the segmentation of the original object.</p>
 
 <div style="text-align: center">
 <img src="imgs/pre_segmentation2.png" alt="core50 for object segmentation" style="width:30%; margin-top:10px;    background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);

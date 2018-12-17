@@ -17,6 +17,7 @@
 - [x] CORe50 benchmark configuration files
 - [x] Easy-to-access results data and batches configurations
 - [x] Easy-setup, getting started and Python data loader
+- [x] Experiments ported to Python 3.x
 - [ ] **New realease and additional baselines** (in progress...)
 
 In this page we provide the code and all the materials related to the **CORe50** 
@@ -36,7 +37,7 @@ You can find more information about the dataset/benchmark as well as additional 
 
 ## Dependencies
 
-In order to extecute the code in the repository you'll need to install the following dependencies in a [Python 2.7](https://www.python.org/) environment:
+In order to extecute the code in the repository you'll need to install the following dependencies in a [Python 3.x](https://www.python.org/) environment:
 
 * [Numpy](https://pypi.python.org/pypi/numpy/1.6.1): _Matrices operations and stuff_
 

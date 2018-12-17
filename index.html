@@ -8,22 +8,22 @@ title: {{ site.name }}
 	<a name="intro"></a>
   <h1>Why CORe50?</h1>
 
-One of the greatest goals of AI is building an artificial continuous learning agent which can construct a sophisticated understanding of the external world from its own experience through the <i>adaptive</i>, <i>goal-oriented</i> and <i>incremental</i> development of ever more complex skills and knowledge.<br><br>
+One of the greatest goals of AI is building an artificial continual learning agent which can construct a sophisticated understanding of the external world from its own experience through the <i>adaptive</i>, <i>goal-oriented</i> and <i>incremental</i> development of ever more complex skills and knowledge.<br><br>
 
-Yet, <strong>Continuous/Lifelong learning (CL)</strong> of high-dimensional data streams is a challenging research problem far from being solved. In fact, fully retraining models each time new data becomes available is infeasible, due to computational and storage issues, while naïve continuous learning strategies have been shown to suffer from <strong>catastrophic forgetting</strong>. Moreover, even in the context of real-world object recognition applications (e.g. robotics), where continuous learning is crucial, very few datasets and benchmarks are available to evaluate and compare emerging techniques.<br><br>
+Yet, <strong>Continual/Lifelong learning (CL)</strong> of high-dimensional data streams is a challenging research problem far from being solved. In fact, fully retraining models each time new data becomes available is infeasible, due to computational and storage issues, while naïve continual learning strategies have been shown to suffer from <strong>catastrophic forgetting</strong>. Moreover, even in the context of real-world object recognition applications (e.g. robotics), where continual learning is crucial, very few datasets and benchmarks are available to evaluate and compare emerging techniques.<br><br>
 
-In this page we provide a new dataset and benchmark <strong>CORe50</strong>, specifically designed for assessing <a href="strategies.html#start"><strong>C</strong>ontinuous Learning techniques</a> in an <strong>O</strong>bject <strong>Re</strong>cognition context, along with a few baseline approaches for three different continuous learning scenarios.
+In this page we provide a new dataset and benchmark <strong>CORe50</strong>, specifically designed for assessing <a href="strategies.html#start"><strong>C</strong>ontinual Learning techniques</a> in an <strong>O</strong>bject <strong>Re</strong>cognition context, along with a few baseline approaches for three different continual learning scenarios. Futhermore, we recently extended CORe50 to support <strong>object detection</strong> and <strong>segmentation</strong>.
 If you plan to use this dataset or other resources you'll find in this page, <strong> please cite our latest paper</strong>: </p>
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/pdf_download.png" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-left:60px">
-<i> Vincenzo Lomonaco and Davide Maltoni. <a href="http://proceedings.mlr.press/v78/lomonaco17a.html" target="_blank">"CORe50: a new Dataset and Benchmark for Continuous Object Recognition".</a> Proceedings of the 1st Annual Conference on Robot Learning, PMLR 78:17-26, 2017. </i>`</div>
+<i> Vincenzo Lomonaco and Davide Maltoni. <a href="http://proceedings.mlr.press/v78/lomonaco17a.html" target="_blank">"CORe50: a new Dataset and Benchmark for continual Object Recognition".</a> Proceedings of the 1st Annual Conference on Robot Learning, PMLR 78:17-26, 2017. </i>`</div>
 </div>
 
 	<a name="dataset"></a>
   <h1>Dataset</h1>
 <p>
-<strong>CORe50</strong>, specifically designed for (<strong>C</strong>)ontinuous (<strong>O</strong>)bject (<strong>Re</strong>)cognition, is a collection of 50 domestic objects belonging to 10 categories: plug adapters, mobile phones, scissors, light bulbs, cans, glasses, balls, markers, cups and remote controls. Classification can be performed at object level (50 classes) or at category level (10 classes). The first task (the default one) is much more challenging because objects of the same category are very difficult to be distinguished under certain poses.  <br><br>
+<strong>CORe50</strong>, specifically designed for (<strong>C</strong>)ontinual (<strong>O</strong>)bject (<strong>Re</strong>)cognition, is a collection of 50 domestic objects belonging to 10 categories: plug adapters, mobile phones, scissors, light bulbs, cans, glasses, balls, markers, cups and remote controls. Classification can be performed at object level (50 classes) or at category level (10 classes). The first task (the default one) is much more challenging because objects of the same category are very difficult to be distinguished under certain poses.  <br><br>
 The dataset has been collected in <strong>11 distinct sessions</strong> (8 indoor and 3 outdoor) characterized by different backgrounds and lighting. For each session and for each object, a 15 seconds video (at 20 fps) has been recorded with a Kinect 2.0 sensor delivering 300 RGB-D frames. <br><br>
 Objects are hand hold by the operator and the camera <i>point-of-view</i> is that of the operator eyes. The operator is required to extend his arm and smoothly move/rotate the object in front of the camera. A subjective point-of-view with objects at grab-distance is well-suited for a number of robotic applications. The grabbing hand (left or right) changes throughout the sessions and relevant object occlusions are often produced by the hand itself.<br><br>
 </p>
@@ -40,8 +40,8 @@ In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in 
   <h1>Benchmark</h1>
 			Popular datasets such as <i>ImageNet</i> and <i>Pascal VOC</i>, provide a very good playground for classification and detection approaches. However, they have been designed with “static” evaluation protocols in mind; the entire dataset is split in just two parts: a training set is used for (one-shot) learning and a separate test set is used for accuracy evaluation.
 
-<br><br><strong>Splitting the training set into a number of batches is essential</strong> to train and test continuous learning approaches, a hot research topic that is currently receiving much attention. Unfortunately, most of the existing datasets are not well suited to this purpose because they lack a fundamental ingredient: the presence of multiple (unconstrained) views of the same objects taken in different sessions (varying background, lighting, pose, occlusions, etc.).
-			Focusing on Object Recognition we consider three continuous learning scenarios:<br><br>
+<br><br><strong>Splitting the training set into a number of batches is essential</strong> to train and test continual learning approaches, a hot research topic that is currently receiving much attention. Unfortunately, most of the existing datasets are not well suited to this purpose because they lack a fundamental ingredient: the presence of multiple (unconstrained) views of the same objects taken in different sessions (varying background, lighting, pose, occlusions, etc.).
+			Focusing on Object Recognition we consider three continual learning scenarios:<br><br>
 <ul class="posts">
 			<li><span><strong>New Instances (NI)</strong>: new training patterns of the same classes becomes available in subsequent batches with new poses and environment conditions (illuminations, background, occlusions, etc..). A good model is expected to incrementally consolidate its knowledge about the known classes without compromising what it learned before.</li><br>
 			<li><span><strong>New Classes (NC)</strong>: new training patterns belonging to different classes becomes available in subsequent batches. In this case the model should be able to deal with the new classes without losing accuracy on the previous ones. </li><br>
@@ -59,7 +59,7 @@ As argued by many researchers, naïve approaches cannot avoid catastrophic forge
 
 <h3> Differences with other common CL Benchmarks </h3>
 <p>
-As you probably noted from the description above, our benchmark is somehow different from the common benchmarks used in the Continuous Learning literature where the focus is mostly about learning a (short) sequence of tasks:
+As you probably noted from the description above, our benchmark is somehow different from the common benchmarks used in the continual Learning literature where the focus is mostly about learning a (short) sequence of tasks:
 
 <ol class="posts">
       <li><span><a href="https://arxiv.org/pdf/1612.00796.pdf" target="_blank">Permuted MNIST</a></li>
@@ -68,14 +68,14 @@ As you probably noted from the description above, our benchmark is somehow diffe
       <li><span><a href="https://arxiv.org/pdf/1612.00796.pdf" target="_blank">Atari Games</a></li>
 </ol>
 
-If you want to learn more about this distinction you can visit our <a href="benchmarks.html#start">"Continuous Learning Benchmarks"</a> web page where we keep track of all the most common benchmarks in CL and the main differences among them (We also keep track of the most popular <a href="strategies.html#start">"Continuous Learning Strategies"</a> and on which benchmark they have been assessed <a href="strategies.html#start">here</a>). <br><br>
+If you want to learn more about this distinction you can visit our <a href="benchmarks.html#start">"Continual Learning Benchmarks"</a> web page where we keep track of all the most common benchmarks in CL and the main differences among them (We also keep track of the most popular <a href="strategies.html#start">"Continual Learning Strategies"</a> and on which benchmark they have been assessed <a href="strategies.html#start">here</a>). <br><br>
 
 Please also note that we decided for simplicity to <strong>keep the test set fixed</strong> across all batches (check section 5.2 of the <a href="https://arxiv.org/abs/1705.03550" target="_blank">paper</a> for further discussions about this choice).
 </p>
 
 	<a name="download"></a>
   <h1>Download</h1>
-	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the materials which could be useful for speeding-up the creation of new <i>continuous learning</i> strategies on CORe50. <br>
+	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the materials which could be useful for speeding-up the creation of new <i>continual learning</i> strategies on CORe50. <br>
 
 <h3> Dataset </h3>
 <p>The dataset directory tree is not that different from what you may expect. For each session (<i>s1, s2, ..., s11</i>) we have 50 directories (<i>o1, o2, ..., o50</i>) representing the 50 objects contained in the dataset. Below you can see to which class each object instance id corresponds to:
@@ -230,9 +230,7 @@ Color004: 149 159 276 286
 <div style="margin-top:10px; margin-bottom:10px;margin-left:60px">
 <strong>core50_label_map.pbtxt</strong>. <i> Label map.</i></div>
 </div>
-<p>Given these 3 files, it is possible to set up a training pipeline according to the <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/configuring_jobs.md"><strong>Tensorflow Object Detection APIs</strong></a>.</p>
-
-<p>Some visual results are shown in <strong>figure 4</strong>:</p>
+<p>Given these 3 files, it is possible to set up a training pipeline according to the <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/configuring_jobs.md"><strong>Tensorflow Object Detection APIs</strong></a>. Some visual results are shown in <strong>figure 4</strong>:</p>
 
 <div style="text-align: center">
 <img src="imgs/detection1.jpg" alt="core50 for object detection" style="width:30%; margin-top:10px;    background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
@@ -257,7 +255,7 @@ Color004: 149 159 276 286
 We tested object detection using a pre-trained <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md">SSD_MobileNet_v1</a> on COCO dataset and <strong>fine-tuning the last layers on CORe50</strong>. Performances stabilize around 20k and 30k iterations, with an accuracy up to <strong>70%</strong> mAP. Further details are available on this <a href="https://github.com/giacomobartoli/vision-kit/tree/master/core50_utils">repository</a>.
 
 <h3> Object Segmentation </h3>
-<p align="justify">It is possible to exploit depth information to segment CORe50 objects. First, we created an algorithm that, given an image, discards all pixels belonging to the background. After that, we trained a SVM classifier to identify holding hand pixels. By deleting the background and the holding hand, what we got is the segmentation of the original object. These steps are shown in figure 5.</p>
+<p align="justify">It is possible to exploit depth information to approximately segment CORe50 objects. First, we created an algorithm that, given an image, discards all pixels belonging to the background. After that, we trained a SVM classifier to identify holding hand pixels. By deleting the background and the holding hand, what we got is the segmentation of the original object. These steps are shown in figure 5.</p>
 
 <div style="text-align: center">
 <img src="imgs/seg_original.png" alt="original image" style="width:25%; margin-top:10px;    background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
@@ -267,7 +265,7 @@ We tested object detection using a pre-trained <a href="https://github.com/tenso
 <img src="imgs/seg_final.png" alt="object segmentation" style="width:25%; margin-top:10px;">
 <p><strong>Fig. 5</strong> <i>Example of Object Segmentation on CORe50.</i> </p>
 </div><br>
-<p> The code for object segmentation is available on this <a href="https://github.com/giacomobartoli/core50_segmentation">repository</a>.</p>
+<p> The code for object segmentation is available on this <a href="https://github.com/giacomobartoli/core50_segmentation">repository</a>. Approximate object segmentation has already been shown successfull in many papers like <a href="https://arxiv.org/abs/1612.06370">"Learning Features by Watching Objects Move", 2016</a>.</p>
 
 
 <h3> Configuration Files </h3>
@@ -298,8 +296,8 @@ So, for each scenario (NI, NC, NIC) we have two different filelists folders depe
 <strong>PLEASE NOTE</strong> that:
 
 <ol class="posts" style='margin-top: 10px'>
-      <li></strong>The order <strong> may highly impact</strong> the accuracy in a continuous learning scenario! This is why a multiple runs configuration is needed;</li>
-      <li><strong>For the NC scenario the mappings "object -> label" are different for each run </strong>. That's because some CL strategies prefer labels to be continuous for each incremental batch (i.e. if we have 3 objects we want the labels to be exactly 0, 1 and 2)!</li>
+      <li></strong>The order <strong> may highly impact</strong> the accuracy in a continual learning scenario! This is why a multiple runs configuration is needed;</li>
+      <li><strong>For the NC scenario the mappings "object -> label" are different for each run </strong>. That's because some CL strategies prefer labels to be continual for each incremental batch (i.e. if we have 3 objects we want the labels to be exactly 0, 1 and 2)!</li>
 </ol>
 
 Recovering the mapping from the filelists is straightforward but a bit tedious so we have already prepared a Python dict for you (download link below) such that you access the mapping as easy as:

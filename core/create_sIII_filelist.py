@@ -74,10 +74,10 @@ def create_sIII_run_filelist(
     # Suffling units
     np.random.shuffle(units)
 
-    print "Number of incremental units: ", len(units)
-    print "----- Unit details (sess, objs) ------"
+    print("Number of incremental units: ", len(units))
+    print("----- Unit details (sess, objs) ------")
     for unit in units:
-        print unit
+        print(unit)
 
     # Creating first batch
     create_filelist(dest_bp + "train_batch_00", filelist_all_sess, [0],
@@ -114,6 +114,7 @@ def create_sIII_run_filelist(
 
     # Resetting previous rnd state
     np.random.set_state(rnd_state)
+
 
 if __name__ == "__main__":
     """ Creating the filelists for a single run. """

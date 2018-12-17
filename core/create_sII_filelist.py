@@ -80,16 +80,16 @@ def create_sII_run_filelist(
     # necessary the label 0).
     if change_labels:
         label_map = {label: i for i, label in enumerate(objs_test)}
-        print "Label map:", label_map
+        print("Label map:", label_map)
 
-    print "obj train:", len(objs), sorted(objs)
+    print("obj train:", len(objs), sorted(objs))
 
     for batch_id in range(9):
         create_filelist(dest_bp + "train_batch_" + str(batch_id).zfill(2),
                         filelist_all_sess, train_sess, objs[batch_id],
                         label_map=label_map)
 
-    print "obj test:", len(objs_test), sorted(objs_test)
+    print("obj test:", len(objs_test), sorted(objs_test))
 
     create_filelist(dest_bp + "test", filelist_all_sess,
                     test_sess, objs_test, label_map=label_map)

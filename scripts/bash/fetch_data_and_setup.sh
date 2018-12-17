@@ -7,7 +7,7 @@ mkdir $DIR/../../data/logs
 mkdir $DIR/../../data/snapshots
 
 echo "Downloading caffenet pre-trained model..."
-wget --directory-prefix=$DIR'/../../data/' http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel
+wget --directory-prefix=$DIR'/../../data/' http://dl.caffe.berkeleyvision.org/bvlc_reference_caffenet.caffemodel
 
 echo "Downloading VGG_CNN_M pre-trained model..."
 wget --directory-prefix=$DIR'/../../data/' http://www.robots.ox.ac.uk/%7Evgg/software/deep_eval/releases/bvlc/VGG_CNN_M.caffemodel

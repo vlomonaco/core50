@@ -265,8 +265,8 @@ class IncFtModel:
         # adjusting the NET parameters
         if self.use_lmdb:
             # TODO: Warning! if you want to use the lmdb format the creation 
-						# of the test set is missing here!
-      			# For a continous learning scenario creating a different lmdb for
+            # of the test set is missing here!
+            # For a continous learning scenario creating a different lmdb for
             # each batch could be really expensive in terms of memory.
             # However if you plan to run the same experiments more times
             # the lmdb can significally reduce the computing time. Your choice,
@@ -317,7 +317,7 @@ class IncFtModel:
                 init_weights, loaded_weights = pkl.load(f)
                 # reinit weights if 'copyfc8_with_reinit'
                 if self.strategy == 'copyfc8_with_reinit':
-                    for clas, (weights, bias) in init_weights.iteritems():
+                    for clas, (weights, bias) in init_weights.items():
                         solver.net.params['mid_fc8'][0].data[clas] = weights
                         solver.net.params['mid_fc8'][1].data[clas] = bias
 
@@ -386,7 +386,7 @@ class IncFtModel:
             self.num_batch_proc > 0:
 
             # here load prev weigths fc8
-            for clas, (weights, bias) in loaded_weights.iteritems():
+            for clas, (weights, bias) in loaded_weights.items():
                 if self.num_batch_proc == 1:
                     weights *= self.weights_mult
 
@@ -405,13 +405,13 @@ class IncFtModel:
                 test_net.params['mid_fc8'][0].data[clas] = weights
                 test_net.params['mid_fc8'][1].data[clas] = bias
 
-        test_iters = (test_size / self.test_minibatch_size + 1)
+        test_iters = (test_size // self.test_minibatch_size + 1)
 
         hits_per_class = [0 for i in range(self.tot_class_num)]
         pattern_per_class = [0 for i in range(self.tot_class_num)]
 
         # computing the accuracy
-        for it in xrange(test_iters):
+        for it in range(test_iters):
             blobs = test_net.forward(blobs=['label', 'mid_fc8'])
 
             labels = blobs['label']
@@ -437,8 +437,10 @@ class IncFtModel:
            self.strategy == 'copyfc8_with_reinit':
             weights_to_save = {}
             class_to_save = self.extract_classes_id(train_filelist)
+            print(class_to_save)
             if loaded_weights:
                 class_to_save += loaded_weights.keys()
+            print(class_to_save)
             # we took only them belonging to encountered classes
             for clas in class_to_save:
                     weights_to_save[clas] = \
@@ -504,7 +506,9 @@ class IncFtModel:
                    "\n[Train-net] avg. other weights: " + \
                    str(np.mean(tr_other_weights)) + \
                    "\n[Train-net] avg. other biases: " + \
-                   str(np.mean(tr_other_biases))
+                   str(np.mean(tr_other_biases)) + \
+                   "\n[Train-net] tot weights avg. : " + \
+                   str(np.mean(tr_new_weights + tr_other_weights))
 
         te_stats = "\n[Test-net] avg. new weights: " + \
                    str(np.mean(te_new_weights)) + \

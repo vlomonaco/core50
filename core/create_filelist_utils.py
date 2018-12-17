@@ -52,7 +52,7 @@ def create_filelist(filelist_name, batches, sess, objs, label_map=None):
     """ This method create a single filelist given a list of objs and sess. """
 
     with open(filelist_name + "_filelist.txt", 'w') as f:
-        for batch_id, patterns in batches.iteritems():
+        for batch_id, patterns in batches.items():
             for filename, label in patterns:
                 if batch_id in sess and label in objs:
                     if label_map:

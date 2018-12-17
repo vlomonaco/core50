@@ -28,7 +28,7 @@ def from_filelist_to_lmdb(root, filelist_path, name, dst_lmdb,
     """ Method to pass from the filelist (caffe format) to the the lmdb. """
 
     # Create lmdb
-    print "Creating lmdb for: " + name
+    print("Creating lmdb for: " + name)
     command = 'convert_imageset -encoded -shuffle -encode_type jpg ' + \
               root + ' ' + filelist_path + ' ' + \
               dst_lmdb + name + "_lmdb"
@@ -40,11 +40,12 @@ def from_filelist_to_lmdb(root, filelist_path, name, dst_lmdb,
         command = 'compute_image_mean ' + dst_lmdb + name + "_lmdb "\
                  + dst_lmdb + "mean_" + name + ".binaryproto"
         os.system(command)
-    
+
+
 if __name__ == "__main__":
 
     # Parametrization example
-    from_dir_to_lmdb(
+    from_filelist_to_lmdb(
         # src of the images (root)
         '/insert/your/path/',
         # where to save the filelist

@@ -46,7 +46,7 @@ ex = Experiment('core50 incremental finetuning')
 
 # We add the observer (if you don't have a configured DB
 # then simply comment the line below line).
-ex.observers.append(MongoObserver.create(db_name='experiments_db'))
+# ex.observers.append(MongoObserver.create(db_name='experiments_db'))
 
 
 @ex.config
@@ -125,9 +125,9 @@ def main(img_dim, conf_files, data_path, lmdb_bp, filelist_bp, snapshots_bp,
         else:
             np.random.shuffle(batch_order)
 
-        print "----------- Run " + run + " -----------"
-        print "batches order: ", batch_order
-        print "-----------------------------"
+        print("----------- Run " + run + " -----------")
+        print("batches order: ", batch_order)
+        print("-----------------------------")
 
         # Setting the meta filelists parameters
         path = filelist_bp + '_inc/run' + run + '/'
@@ -168,7 +168,7 @@ def main(img_dim, conf_files, data_path, lmdb_bp, filelist_bp, snapshots_bp,
                 batch_order=batch_order
             )
         else:
-            print "Error: scenario not known."
+            print("Error: scenario not known.")
 
         # Create object incFTModel
         inc_model = IncFtModel(img_dim, conf_files, data_path, lmdb_bp,
@@ -190,14 +190,14 @@ def main(img_dim, conf_files, data_path, lmdb_bp, filelist_bp, snapshots_bp,
                 + "_filelist.txt", test_filelist)
 
             # Printing batch results
-            print s
-            print "Acc. per class:"
+            print(s)
+            print("Acc. per class:")
             for i, single_acc in enumerate(accs):
-                print str(i) + ': ' + str(round(single_acc, 3)).ljust(
-                    10) + "\t",
+                print(str(i) + ': ' + str(round(single_acc, 3)).ljust(
+                    10) + "\t", end="")
                 if (i + 1) % 5 == 0:
-                    print ""
-            print "----------------------------"
+                    print("")
+            print("----------------------------")
 
             # Saving them on the DB
             if 'inc_accuracy' not in ex.info[run].keys():

@@ -11,8 +11,6 @@
 
 ----------------------------------------------
 
-#### *WARNING: This repository is still under construction!*
-
 - [x] CORe50 core code-base
 - [x] CORe50 benchmark configuration files
 - [x] Easy-to-access results data and batches configurations

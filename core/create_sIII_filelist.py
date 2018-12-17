@@ -28,7 +28,7 @@ import numpy as np
 from create_filelist_utils import create_filelist, load_filelist_per_sess
 
 def create_sIII_run_filelist(
-    glob_file='/path/to/core50_root_dir/128/*/*/*',
+    glob_file='data/core50_128x128/*/*/*',
     dest_bp='/insert/your/path/sIII_inc/',
     dest_cum_bp='/insert/your/path/sIII_cum/',
     all_sess=range(11),

@@ -1,0 +1,251 @@
+item {
+ id:1 
+ name: 'plug_adapter1'
+}
+
+item {
+ id:2 
+ name: 'plug_adapter2'
+}
+
+item {
+ id:3 
+ name: 'plug_adapter3'
+}
+
+item {
+ id:4 
+ name: 'plug_adapter4'
+}
+
+item {
+ id:5 
+ name: 'plug_adapter5'
+}
+
+item {
+ id:6 
+ name: 'mobile_phone1'
+}
+
+item {
+ id:7 
+ name: 'mobile_phone2'
+}
+
+item {
+ id:8 
+ name: 'mobile_phone3'
+}
+
+item {
+ id:9 
+ name: 'mobile_phone4'
+}
+
+item {
+ id:10 
+ name: 'mobile_phone5'
+}
+
+item {
+ id:11 
+ name: 'scissor1'
+}
+
+item {
+ id:12 
+ name: 'scissor2'
+}
+
+item {
+ id:13 
+ name: 'scissor3'
+}
+
+item {
+ id:14 
+ name: 'scissor4'
+}
+
+item {
+ id:15 
+ name: 'scissor5'
+}
+
+item {
+ id:16 
+ name: 'light_bulb1'
+}
+
+item {
+ id:17 
+ name: 'light_bulb2'
+}
+
+item {
+ id:18 
+ name: 'light_bulb3'
+}
+
+item {
+ id:19 
+ name: 'light_bulb4'
+}
+
+item {
+ id:20 
+ name: 'light_bulb5'
+}
+
+item {
+ id:21 
+ name: 'can1'
+}
+
+item {
+ id:22 
+ name: 'can2'
+}
+
+item {
+ id:23 
+ name: 'can3'
+}
+
+item {
+ id:24 
+ name: 'can4'
+}
+
+item {
+ id:25 
+ name: 'can5'
+}
+
+item {
+ id:26 
+ name: 'glass1'
+}
+
+item {
+ id:27 
+ name: 'glass2'
+}
+
+item {
+ id:28 
+ name: 'glass3'
+}
+
+item {
+ id:29 
+ name: 'glass4'
+}
+
+item {
+ id:30 
+ name: 'glass5'
+}
+
+item {
+ id:31 
+ name: 'ball1'
+}
+
+item {
+ id:32 
+ name: 'ball2'
+}
+
+item {
+ id:33 
+ name: 'ball3'
+}
+
+item {
+ id:34 
+ name: 'ball4'
+}
+
+item {
+ id:35 
+ name: 'ball5'
+}
+
+item {
+ id:36 
+ name: 'marker1'
+}
+
+item {
+ id:37 
+ name: 'marker2'
+}
+
+item {
+ id:38 
+ name: 'marker3'
+}
+
+item {
+ id:39 
+ name: 'marker4'
+}
+
+item {
+ id:40 
+ name: 'marker5'
+}
+
+item {
+ id:41 
+ name: 'cup1'
+}
+
+item {
+ id:42 
+ name: 'cup2'
+}
+
+item {
+ id:43 
+ name: 'cup3'
+}
+
+item {
+ id:44 
+ name: 'cup4'
+}
+
+item {
+ id:45 
+ name: 'cup5'
+}
+
+item {
+ id:46 
+ name: 'remote_control1'
+}
+
+item {
+ id:47 
+ name: 'remote_control2'
+}
+
+item {
+ id:48 
+ name: 'remote_control3'
+}
+
+item {
+ id:49 
+ name: 'remote_control4'
+}
+
+item {
+ id:50 
+ name: 'remote_control5'
+}
+
+

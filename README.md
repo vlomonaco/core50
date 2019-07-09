@@ -22,19 +22,19 @@ In this page we provide the code and all the materials related to the **CORe50**
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please cite our latest papers ["CORe50: a New Dataset and Benchmark for Continuous Object Recognition"](http://proceedings.mlr.press/v78/lomonaco17a.html) and ["Fine-Grained Continual Learning"](): 
 
 	@InProceedings{lomonaco2017core50,
-	  title = {CORe50: a New Dataset and Benchmark for Continuous Object Recognition},
-	  author = {Vincenzo Lomonaco and Davide Maltoni},
-	  booktitle = {Proceedings of the 1st Annual Conference on Robot Learning},
-	  pages = {17--26},
-	  year = {2017},
-	  volume = {78}
+	   title = {CORe50: a New Dataset and Benchmark for Continuous Object Recognition},
+	   author = {Vincenzo Lomonaco and Davide Maltoni},
+	   booktitle = {Proceedings of the 1st Annual Conference on Robot Learning},
+	   pages = {17--26},
+	   year = {2017},
+	   volume = {78}
 	}
 
 	@article{lomonaco2019nicv2,
 	  title = {Fine-Grained Continual Learning},
-       	  author = {Lomonaco, Vincenzo and Maltoni, Davide and Pellegrini, Lorenzo},
-       	  journal = {arXiv preprint arXiv:XXXX.XXXXX},
-          year = {2019}
+	  author = {Lomonaco, Vincenzo and Maltoni, Davide and Pellegrini, Lorenzo},
+	  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+	  year = {2019}
 	}
 	
 You can find more information about the dataset/benchmark as well as additional data to download at: 

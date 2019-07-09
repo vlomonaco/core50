@@ -31,10 +31,10 @@ benchmark. If you plan to use this dataset or other resources you'll find in thi
 	}
 
 	@article{lomonaco2019nicv2,
-	  title = {Fine-Grained Continual Learning},
-	  author = {Lomonaco, Vincenzo and Maltoni, Davide and Pellegrini, Lorenzo},
-	  journal = {arXiv preprint arXiv:XXXX.XXXXX},
-	  year = {2019}
+	   title = {Fine-Grained Continual Learning},
+	   author = {Lomonaco, Vincenzo and Maltoni, Davide and Pellegrini, Lorenzo},
+	   journal = {arXiv preprint arXiv:XXXX.XXXXX},
+	   year = {2019}
 	}
 	
 You can find more information about the dataset/benchmark as well as additional data to download at: 

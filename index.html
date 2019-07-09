@@ -13,14 +13,14 @@ One of the greatest goals of AI is building an artificial continual learning age
 Yet, <strong>Continual/Lifelong learning (CL)</strong> of high-dimensional data streams is a challenging research problem far from being solved. In fact, fully retraining models each time new data becomes available is infeasible, due to computational and storage issues, while naïve continual learning strategies have been shown to suffer from <strong>catastrophic forgetting</strong>. Moreover, even in the context of real-world object recognition applications (e.g. robotics), where continual learning is crucial, very few datasets and benchmarks are available to evaluate and compare emerging techniques.<br><br>
 
 In this page we provide a new dataset and benchmark <strong>CORe50</strong>, specifically designed for assessing <a href="strategies.html#start"><strong>C</strong>ontinual Learning techniques</a> in an <strong>O</strong>bject <strong>Re</strong>cognition context, along with a few baseline approaches for three different continual learning scenarios. Futhermore, we recently extended CORe50 to support <strong>object detection</strong> and <strong>segmentation</strong>.
-If you plan to use this dataset or other resources you'll find in this page, <strong> please cite our latest paper</strong>: </p>
+If you plan to use this dataset or other resources you'll find in this page, <strong> please cite the related papers</strong>: </p>
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/pdf_download.png" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-left:60px">
 <i> Vincenzo Lomonaco and Davide Maltoni. <a href="http://proceedings.mlr.press/v78/lomonaco17a.html" target="_blank">"CORe50: a new Dataset and Benchmark for continual Object Recognition".</a> Proceedings of the 1st Annual Conference on Robot Learning, PMLR 78:17-26, 2017. </i></div>
 </div>
 
-<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:0px; margin-bottom:10px">
+<div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:0px; margin-bottom:20px">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href=""><img src="imgs/pdf_download.png" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
 <div style="margin-left:60px">
 <i> Vincenzo Lomonaco, Davide Maltoni and Lorenzo Pellegrini. <a href="" target="_blank">"Fine-Grained Continual Learning".</a> Arxiv Pre-print, 2019. </i></div>
@@ -28,16 +28,17 @@ If you plan to use this dataset or other resources you'll find in this page, <st
 
 <h2>Table of Content</h2>
 <p style="background: rgba(0,0,0,0.06) none repeat scroll 0% 0%; background-color: rgba(227, 246, 254, 0.79); border: 1px solid rgb(222, 222, 222); padding: 1em; border-radius: 5px; padding-bottom: 41px;">
-	<a href=''>1. Dataset</a><br>
-	<a href=''>2. Benchmark</a><br>
-	&nbsp &nbsp &nbsp <a href=''>2.1 Differences with other common CL Benchmarks</a><br>
-	<a href=''>3. Download<br>
-	&nbsp &nbsp &nbsp <a href=''>3.2 Object Detection</a><br>
-	&nbsp &nbsp &nbsp <a href=''>3.3 Object Segmentation</a><br>
-	&nbsp &nbsp &nbsp <a href=''>3.4 Configuration Files</a><br>
-	&nbsp &nbsp &nbsp <a href=''>3.5 Results</a><br>
-	&nbsp &nbsp &nbsp <a href=''>3.6 Code and Data Loaders<br>
-	<a href=''> 4. Contacts</a>
+	<a href='#dataset'>1. Dataset</a><br>
+	<a href='#benchmark'>2. Benchmark</a><br>
+	&nbsp &nbsp &nbsp <a href='#differences'>2.1 Differences with other common CL Benchmarks</a><br>
+	<a href='#download'>3. Download<br>
+	&nbsp &nbsp &nbsp <a href='#or'>3.1 Dataset</a><br>
+	&nbsp &nbsp &nbsp <a href='#detection'>3.2 Object Detection</a><br>
+	&nbsp &nbsp &nbsp <a href='#segmentation'>3.3 Object Segmentation</a><br>
+	&nbsp &nbsp &nbsp <a href='#confs'>3.4 Configuration Files</a><br>
+	&nbsp &nbsp &nbsp <a href='#results'>3.5 Results</a><br>
+	&nbsp &nbsp &nbsp <a href='#code'>3.6 Code and Data Loaders<br>
+	<a href='#contacts'> 4. Contacts</a>
 </p>
 
 	<a name="dataset"></a>
@@ -78,6 +79,7 @@ In <strong>Fig. 1</strong> you can see some image examples of the 50 objects in 
 As argued by many researchers, naïve approaches cannot avoid catastrophic forgetting in complex real-world scenarios such as <strong>NC</strong> and <strong>NIC</strong>. In our work we have designed <strong>simple baselines</strong> which can perform markedly better than naïve strategies but still leave much room for improvements (see <strong> Fig. 2</strong>). Check it out the full results on our <a href="https://arxiv.org/abs/1705.03550" target="_blank">paper</a> or download them as tsv or python dicts in the section below!
 
 <h3> Differences with other common CL Benchmarks </h3>
+	<a name="differences"></a>
 <p>
 As you probably noted from the description above, our benchmark is somehow different from the common benchmarks used in the continual Learning literature where the focus is mostly about learning a (short) sequence of tasks:
 
@@ -98,6 +100,7 @@ Please also note that we decided for simplicity to <strong>keep the test set fix
 	In order to facilitate the usage of the benchmark we freely release the dataset, the code to reproduce the baselines and all the materials which could be useful for speeding-up the creation of new <i>continual learning</i> strategies on CORe50. <br>
 
 <h3> Dataset </h3>
+<a name="or"></a>
 <p>The dataset directory tree is not that different from what you may expect. For each session (<i>s1, s2, ..., s11</i>) we have 50 directories (<i>o1, o2, ..., o50</i>) representing the 50 objects contained in the dataset. Below you can see to which class each object instance id corresponds to:
 <pre><code>[o1, ..., o5] -> plug adapters
 [o6, ..., o10] -> mobile phones
@@ -234,6 +237,8 @@ Color004: 149 159 276 286
 </div>
 
 <h3> Object Detection </h3>
+<a name="detection"></a>
+
 <p>CORe50 can even be used for Object Detection. In this scenario, we have already provided Tensorflow records for setting up the training pipeline:</p>
 <div style="background-color: rgba(227, 246, 254, 0.79); padding: 20px; margin-top:20px;">
 <div style="width:60px; height: 60px;float:left; padding-right:10px"><a href="http://bias.csr.unibo.it/maltoni/download/core50/core50_train.record"><img src="imgs/download.ico" width="50px" style="padding:5px; vertical-align: middle;"></a></div>
@@ -275,6 +280,8 @@ Color004: 149 159 276 286
 We tested object detection using a pre-trained <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md">SSD_MobileNet_v1</a> on COCO dataset and <strong>fine-tuning the last layers on CORe50</strong>. Performances stabilize around 20k and 30k iterations, with an accuracy up to <strong>70%</strong> mAP. Further details are available on this <a href="https://github.com/giacomobartoli/vision-kit/tree/master/core50_utils">repository</a>.
 
 <h3> Object Segmentation </h3>
+<a name="segmentation"></a>
+
 <p align="justify">It is possible to exploit depth information to approximately segment CORe50 objects. First, we created an algorithm that, given an image, discards all pixels belonging to the background. After that, we trained a SVM classifier to identify holding hand pixels. By deleting the background and the holding hand, what we got is the segmentation of the original object. These steps are shown in figure 5.</p>
 
 <div style="text-align: center">
@@ -289,6 +296,8 @@ We tested object detection using a pre-trained <a href="https://github.com/tenso
 
 
 <h3> Configuration Files </h3>
+<a name="confs"></a>
+
 <p>Do you wanna use a different DL framework or programming language but still being able to compare your results with our benchmark? Well that's easy! Just <strong>download the batches filelists for each experiment</strong> in plain .txt format!
 The filelists directory tree will look like this:</p>
 <pre><code>filelists/
@@ -351,6 +360,8 @@ Recovering the mapping from the filelists is straightforward but a bit tedious s
 </div>
 
 <h3> Results </h3>
+<a name="results"></a>
+
 If you want to compare your strategy with our benchmark or just take a closer look at the tabular results, we are making available the <strong>tab separated values (.tsv)</strong> files for each experiment! Which you can easily import in excel or parse with your favourite programming language ;-) The format of the text files is the following:
 <pre style="margin-top:15px"><code>###################################
 # scenario: NI
@@ -412,6 +423,8 @@ A similar approach can be used with the <i>sequential experiments</i> of <strong
 </div>
 
 <h3> Code and Data Loaders </h3>
+<a name="code"></a>
+
 The Python code for reproducing the experiments in the paper is already available in the master branch of <a href="https://github.com/vlomonaco/core50"> this github repository</a>!<br><br>
 
 As you might have noticed, assessing your own CL strategies on CORe50 wouldn't be as simple as loading the npz file since you have to deal with a number of runs and configurations. That's way we also provide a <i>super fast</i> and <i>flexible</i> <strong>Python Data Loader</strong> which can handle that for you. For example:

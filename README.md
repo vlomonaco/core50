@@ -19,7 +19,7 @@
 - [ ] **New realease and additional baselines** (in progress...)
 
 In this page we provide the code and all the materials related to the **CORe50** 
-benchmark. If you plan to use this dataset or other resources you'll find in this page, please cite our latest papers ["CORe50: a New Dataset and Benchmark for Continuous Object Recognition"](http://proceedings.mlr.press/v78/lomonaco17a.html) and ["Fine-Grained Continual Learning"](): 
+benchmark. If you plan to use this dataset or other resources you'll find in this page, please cite our latest papers ["CORe50: a New Dataset and Benchmark for Continuous Object Recognition"](http://proceedings.mlr.press/v78/lomonaco17a.html) and ["Fine-Grained Continual Learning"](https://arxiv.org/abs/1907.03799): 
 
 	@InProceedings{lomonaco2017core50,
 	   title = {CORe50: a New Dataset and Benchmark for Continuous Object Recognition},
@@ -33,7 +33,7 @@ benchmark. If you plan to use this dataset or other resources you'll find in thi
 	@article{lomonaco2019nicv2,
 	   title = {Fine-Grained Continual Learning},
 	   author = {Vincenzo Lomonaco and Davide Maltoni and Lorenzo Pellegrini},
-	   journal = {arXiv preprint arXiv:XXXX.XXXXX},
+	   journal = {Arxiv preprint arXiv:1907.03799},
 	   year = {2019}
 	}
 	

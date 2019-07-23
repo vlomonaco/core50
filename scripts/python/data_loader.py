@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-# Copyright (c) 2017. Vincenzo Lomonaco. All rights reserved.                  #
+# Copyright (c) 2019. Vincenzo Lomonaco. All rights reserved.                  #
 # See the accompanying LICENSE file for terms.                                 #
 #                                                                              #
-# Date: 24-11-2017                                                             #
+# Date: 23-07-2019                                                             #
 # Author: Vincenzo Lomonaco                                                    #
 # E-mail: vincenzo.lomonaco@unibo.it                                           #
 # Website: vincenzolomonaco.com                                                #
@@ -37,7 +37,8 @@ class CORE50(object):
         preload (string, optional): If True data is pre-loaded with look-up
             tables. RAM usage may be high.
         scenario (string, optional): One of the three scenarios of the CORe50
-            benchmark ``ni``, ``nc`` or ``nic``.
+            benchmark ``ni``, ``nc``, ``nic``, `nicv2_79`,``nicv2_196`` and
+             ``nicv2_391``.
         train (bool, optional): If True, creates the dataset from the training
             set, otherwise creates from test set.
         cumul (bool, optional): If True the cumulative scenario is assumed, the
@@ -55,7 +56,10 @@ class CORE50(object):
     nbatch = {
         'ni': 8,
         'nc': 9,
-        'nic': 79
+        'nic': 79,
+        'nicv2_79': 79,
+        'nicv2_196': 196,
+        'nicv2_391': 391
     }
 
     def __init__(self, root='', preload=False, scenario='ni', cumul=False,
@@ -235,17 +239,23 @@ class CORE50(object):
 
 if __name__ == "__main__":
 
-    # Create the dataset object
-    dataset = CORE50(root='~/core50_128x128')
+    # Create the dataset object for example with the "NIC_v2 - 79 benchmark"
+    # and assuming the core50 location in ~/core50/128x128/
+    dataset = CORE50(root='~/core50/128x128', scenario="nicv2_79")
 
     # Get the fixed test set
     test_x, test_y = dataset.get_test_set()
 
     # loop over the training incremental batches
-    for train_batch in dataset:
+    for i, train_batch in enumerate(dataset):
         # WARNING train_batch is NOT a mini-batch, but one incremental batch!
         # You can later train with SGD indexing train_x and train_y properly.
         train_x, train_y = train_batch
 
-        # do your computation here...
+        print("----------- batch {0} -------------".format(i))
+        print("train shape: {0}, test_shape: {0}"
+              .format(train_x.shape, train_y.shape))
+
+        # use the data
+        pass
 

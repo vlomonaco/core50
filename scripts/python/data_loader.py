@@ -253,7 +253,7 @@ if __name__ == "__main__":
         train_x, train_y = train_batch
 
         print("----------- batch {0} -------------".format(i))
-        print("train shape: {0}, test_shape: {0}"
+        print("train shape: {}, test_shape: {}"
               .format(train_x.shape, train_y.shape))
 
         # use the data

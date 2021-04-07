@@ -16,7 +16,7 @@
 - [x] Easy-to-access results data and batches configurations
 - [x] Easy-setup, getting started and Python data loader
 - [x] Experiments ported to Python 3.x
-- [ ] **New realease and additional baselines** (in progress...)
+- [x] **New realease and additional baselines within [Avalanche](https://avalanche.continualai.org)**
 
 In this page we provide the code and all the materials related to the **CORe50** 
 benchmark. If you plan to use this dataset or other resources you'll find in this page, please cite our latest papers ["CORe50: a New Dataset and Benchmark for Continuous Object Recognition"](http://proceedings.mlr.press/v78/lomonaco17a.html) and ["Fine-Grained Continual Learning"](https://arxiv.org/abs/1907.03799): 
